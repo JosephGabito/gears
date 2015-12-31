@@ -4,6 +4,7 @@
  *
  * @since 1.0
  */
+
 $fb = new Facebook\Facebook([
   		'app_id' => $this->appID,
   		'app_secret' => $this->appSecret,
