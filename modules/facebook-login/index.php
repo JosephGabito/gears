@@ -5,7 +5,8 @@
 defined( 'ABSPATH' ) || exit;
 
 // Start the session if there are no sessions found.
-if( session_id() == '' ) {
+if ( session_id() == '' ) {
+	// As required by the Facebook SDK
     session_start();
 }
 
