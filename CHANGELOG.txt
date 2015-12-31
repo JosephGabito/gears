@@ -1,0 +1,26 @@
+06/03/2015
+- Added localisation
+- Updated Strings
+
+04/21/2015
+
+- Added styling to Gears BuddyPress Shortcodes
+- Showed Gears Visual Composer Shortcodes attributes
+- Revamp Gears Visual Composer Shortcodes Icons
+- Added fallback for BuddyPress' Components disabled
+- Changed fallback messages 
+
+04/20/2015
+- Added functionality for klein coverphoto 3.3
+- Adjusted default cover photo size
+- Added auto update file for easier update
+- Code optimisation
+
+04/11/2015
+- 3.2
+- Added version level
+
+03/14/2015
+
+- 3.1
+- Fixed: "can't use function return value in write context"

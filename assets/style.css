@@ -1,0 +1,391 @@
+/**
+ * Gears Stylesheet
+ * @version 2.1
+ * @package gears
+ */
+
+/*= Mega Menu
+------------- */
+
+.sub-menu-mega{
+    background: #fff;
+
+}
+.sub-menu-mega > li{
+    width: 900px!important  ;
+    max-width: 900px;
+}
+.mega-menu-content{
+    width: 100%;
+    padding: 24px 48px 0 48px;
+}
+
+/*= Login Form
+------------------------------------ */
+.gears-login-links ul{
+    margin-bottom: 0;
+}
+.gears-login-links ul:after{
+    content: " ";
+    clear: both;
+    width: 100%;
+    display: block;
+}
+.gears-login-links ul, 
+.gears-login-links li{
+    margin-left: 0;
+    list-style: none;
+}
+.gears-login-links li{
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 1.714;
+    float: left;
+    padding: 12px 24px;
+    background: #eee;
+    border: 1px solid #e1e1e1;
+    margin-right: -1px;
+}
+
+
+.gears-login-links li.current{
+    background: #fff;
+}
+
+.gears-login-links li a{
+    color: #7a7a7a;
+}
+.gears-login-wrap{
+    max-width: 390px;
+}
+.gears-login.well{
+    border-radius: 0;
+    position: relative;
+    top: -1px;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 2;
+}
+/*= Groups Carousel 2
+------------------------------------ */
+
+.gears-bp-groups-carousel-2 .item-details{
+    padding:  24px;
+    background: #fff;
+
+}
+
+.gears-bp-groups-carousel-2 .group-title{
+    width:100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 20px;
+    white-space: nowrap;
+}
+/*= Members Carousel 2
+------------------------------------ */
+
+.gears-members-carousel-2-item
+{
+	margin-left: 0;
+}
+.gears-members-carousel-2-wrap
+{
+	position: relative;;
+	background: #fff;
+}
+
+.gears-members-carousel-2-wrap:hover{
+	opacity: 0.8;
+}
+
+.gears-members-carousel-2-wrap .cover-photo
+{
+	
+}
+
+.gears-members-carousel-2-wrap .member-name
+{
+	
+position: relative;
+top: -40px;
+left: 140px;
+
+}
+
+.gears-members-carousel-2-wrap .member-name a h3{
+	color: #212121;
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+	font-size: 16px;
+}
+
+.gears-members-carousel-2-wrap .member-avatar
+{
+	margin-left: 20px;
+	margin-top: -48px;
+
+}
+
+.gears-members-carousel-2-wrap .member-avatar img
+{
+	width: 100px;
+	border-radius: 50%;
+	border: 1px solid #fff;
+	box-shadow: 0 0 0 2px #fff, 0 0 0 3px #fff;
+}
+
+.gears-members-carousel-2-wrap .spacer
+{
+	padding: 10px 0;
+}
+/*= Members Carousel
+------------------------------------ */
+.bp-groups-carousel li.carousel-item,
+.bp-members-carousel li.carousel-item
+{
+    margin-left: 0;
+}
+
+
+
+/*= Pricing Table
+------------------------------------- */
+.gears-pricing-table
+{
+    border: 1px solid #e1e1e1;
+    background: #fff;
+    padding: 24px;
+}
+
+.gears-pricing-table-title,
+.gears-pricing-table-price-label,
+.gears-pricing-table-btn
+{
+
+}
+
+.gears-pricing-table-price-label
+{
+    padding: 24px 0 0;
+
+}
+
+.gears-pricing-table-btn a
+{
+    width: 100%;
+}
+
+.gears-pricing-table-title
+{
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    border-radius: 4px 4px 0 0;
+}
+
+.gears-pricing-table-title .glyphicon-star
+{
+    color: #f1c40f;
+}
+
+
+
+.gears-pricing-table-title h2
+{
+    font-size: 24px;
+
+    margin-bottom: 0;
+}
+
+.gears-pricing-table-price-label h3
+{
+    font-size: 29px;
+    line-height: 0.8275;
+    text-transform: uppercase;
+    margin-bottom: 0.8275em;
+
+}
+
+.gears-pricing-table-features-list
+{
+    margin: 0;
+    list-style: none;
+}
+
+.gears-pricing-table-features-list .glyphicon
+{
+    margin-right: 6px;
+    position: relative;
+    top: 3px;
+}
+
+.gears-pricing-table-features
+{
+    margin-bottom: 24px;
+}
+
+.gears-pricing-table-features-list:last-child
+{
+    border-bottom: none;
+}
+
+/**
+ * Added on 3.4
+ */
+
+/**
+ * Table of Contents
+ * ----------------------
+ * 1. Members Grid
+ * 2. Groups Grid
+ * 3. Members Carousel
+ * 4. Groups Carousel
+ */
+
+
+/**
+ * Stylesheet
+ * 
+ * 1. Members Grid
+ */
+.ul-bp-members-grid {
+    padding-left: 0;
+}
+
+.ul-bp-members-grid li.bp-members-grid-item {
+    margin-bottom: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+.ul-bp-members-grid .gears-bp-members-grid .avatar {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+.ul-bp-members-grid .members-name {
+    padding: 10%;
+    display: block;
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    bottom: -40px;
+    z-index: 9;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;  
+}
+.ul-bp-members-grid li.bp-members-grid-item:hover .members-name {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-40px);
+}
+/**
+ * 2. Groups Grid
+ */
+.gears-bp-groups-grid li.bp-groups-grid-item {
+    margin-bottom: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+.gears-bp-groups-grid .bp-groups-grid-item a img.avatar {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+.gears-bp-groups-grid .groups-name {
+    padding: 8%;
+    display: block;
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    bottom: -40px;
+    z-index: 9;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;  
+}
+
+.gears-bp-groups-grid li.bp-groups-grid-item:hover .groups-name {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-40px);
+}
+
+.gears-bp-groups-grid .groups-count {
+    display: block;
+    font-style: italic;
+}
+/**
+ * 3. Members Carousel
+ */
+.bp-members-carousel {
+    height: 0;
+}
+.bp-members-carousel .members-name {
+    padding: 10%;
+    display: block;
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    bottom: -40px;
+    z-index: 9;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;  
+}
+.bp-members-carousel li.carousel-item:hover .members-name {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-40px);
+}
+/**group-title
+ * 4. Groups Carousel
+ */
+.bp-groups-carousel {
+    height: 0;
+}
+.bp-groups-carousel .groups-name {
+    padding: 5%;
+    display: block;
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    bottom: -40px;
+    z-index: 9;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;  
+}
+.bp-groups-carousel li.carousel-item:hover .groups-name {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-40px);
+}
+
+.bp-groups-carousel .groups-count {
+    display: block;
+    font-style: italic;
+}
