@@ -74,7 +74,7 @@ if (!class_exists('Gears'))
 			}
 
 			// Facebook Connect
-			$is_ce_module_facebook_login_enabled = apply_filters('gears_is_fb_enabled', $this->ot_theme_option( 'is_fb_enabled' ));
+			$is_ce_module_facebook_login_enabled = apply_filters( 'gears_is_fb_enabled', $this->ot_theme_option( 'is_fb_enabled' ) );
 
 			if( !is_user_logged_in() && $is_ce_module_facebook_login_enabled && get_option('users_can_register') ){
 			
