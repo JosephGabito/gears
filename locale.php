@@ -11,6 +11,6 @@ add_action('plugins_loaded', 'gears_load_textdomain');
 function gears_load_textdomain() {
 
 	if  (load_plugin_textdomain('gears', false, dirname( plugin_basename( __FILE__ )) . '/locale'));
-	
-}
+
+} 
 ?>
