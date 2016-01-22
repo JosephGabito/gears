@@ -287,7 +287,7 @@ if (!isset($bp)) return;
             // Check the nonce
             check_admin_referer( 'bp_avatar_cropstore' );
 
-            $groups_slug = bcp_get_groups_slug();
+            $groups_slug = trailingslashit( bcp_get_groups_slug() );
 
             $args = array(
                 'item_id'       => $item_id,
