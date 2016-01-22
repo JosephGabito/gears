@@ -3,11 +3,11 @@
  * BP Cover Photo
  *
  * Adds Cover Photo functionality
- * 
+ *
  * @buddypress version 2.+
  * @author dunhakdis
  */
- 
+
 if ( !defined( 'ABSPATH' ) ) exit;
 
 /**
@@ -30,79 +30,76 @@ if (!isset($bp)) return;
 
     if ( current_user_can('manage_options') || bp_displayed_user_id() == bp_loggedin_user_id()){
         // create cover photo tab in user's profile
-        bp_core_new_subnav_item( 
+        bp_core_new_subnav_item(
             array(
                'name' => __('Cover Photo', 'gears'),
                'slug' => 'cover-photo',
                'parent_url' => trailingslashit($bp->displayed_user->domain . $bp->profile->slug . '/'),
                'parent_slug' => $bp->profile->slug,
                'screen_function' => 'bcp_cover_photo_screen',
-               'position' => 40 
-           ) 
+               'position' => 40
+           )
         );
 
         // create skin tab under profile
         if (BCP_ENABLE_CUSTOMISE) {
-            bp_core_new_subnav_item( 
+            bp_core_new_subnav_item(
                 array(
                    'name' => __('Customize', 'gears'),
                    'slug' => 'bcp-customize',
                    'parent_url' => trailingslashit($bp->displayed_user->domain . $bp->profile->slug . '/'),
                    'parent_slug' => $bp->profile->slug,
                    'screen_function' => 'bcp_profile_skin_screen',
-                   'position' => 41 
-               ) 
+                   'position' => 41
+               )
             );
         }
 
     }
-    
+
     if (bp_is_group_single()) {
-     
+
         $current_group_id = (int)$bp->groups->current_group->id;
         $group_creator_id = (int)$bp->groups->current_group->creator_id;
-   
+
         $current_user = get_current_user_id();
 
         if ( current_user_can('manage_options') ||  $group_creator_id == $current_user)
         {
-            $groups_slug = bcp_get_groups_slug();
-
+            $groups_slug = trailingslashit( bcp_get_groups_slug() );
             /**
              * Create cover photo tab inside groups.
              */
-            
-            $groups_url = esc_url( trailingslashit ( $groups_slug .  $bp->groups->current_group->slug ) );
-
-            bp_core_new_subnav_item( 
+            $groups_url = trailingslashit ( $groups_slug .  $bp->groups->current_group->slug );
+            bp_core_new_subnav_item(
                 array(
                    'name' => __('Cover Photo', 'gears'),
                    'slug' => 'cover-photo',
                    'parent_url' => $groups_url,
                    'parent_slug' =>  $bp->groups->current_group->slug,
                    'screen_function' => 'bcp_cover_photo_screen',
-                   'position' => 1000    
-               ) 
+                   'position' => 1000
+               )
             );
         }
     }
 
     /**
      * Returns the current slug of the group
-     * 
+     *
      * @return string the slug of the page selected as groups screen
      */
     function bcp_get_groups_slug()
     {
         $bp = buddypress();
 
-        $groups_slug = $bp->groups->slug; 
-            
+        $groups_slug = $bp->groups->slug;
+
         $bp_groups_page_slug = '';
 
         // incase the user selected a different page for groups
         // get the page that is assigned to groups and catch the slug
-        $bp_pages = get_option('bp-pages'); 
+        $bp_pages = get_option('bp-pages');
 
         if (!empty($bp_pages)) {
 
@@ -114,9 +111,9 @@ if (!isset($bp)) return;
 
                 $bp_groups_page_slug = get_permalink( $bp_groups_page_id );
 
-            } 
-        } 
-            
+            }
+        }
+
         if (!empty($bp_groups_page_slug)) {
             $groups_slug = $bp_groups_page_slug;
         }
@@ -137,7 +134,7 @@ if (!isset($bp)) return;
     /**
      * renders the template for adding/cropping cover photo
      */
-    function bcp_profile_skin_body() { 
+    function bcp_profile_skin_body() {
 
         $template = plugin_dir_path( __FILE__ ) . 'templates/customise.php';
 
@@ -148,11 +145,11 @@ if (!isset($bp)) return;
 
     /**
      * callback function for the skin menu
-     * 
+     *
      * @return void
      */
     function bcp_profile_skin_screen()
-    {   
+    {
         add_action('wp_enqueue_scripts', 'bcp_profile_skin_screen_scripts');
         add_action('bp_template_title', 'bcp_profile_skin_title' );
         add_action( 'bp_template_content', 'bcp_profile_skin_body' );
@@ -160,7 +157,7 @@ if (!isset($bp)) return;
         $user_id = get_current_user_id();
 
         if(current_user_can('manage_options')){
-            $user_id = bp_displayed_user_id(); 
+            $user_id = bp_displayed_user_id();
         }
 
         if(isset($_POST['user-profile-customisation'])){
@@ -228,13 +225,13 @@ if (!isset($bp)) return;
     /**
      * cover photo subnav callback function. renders the title content and the template
      * files that are needed to process the upload and cropping of the photo
-     * 
+     *
      * @author dunhakdis<codehaiku.io@gmail.com>
      * @package bp-cover-photo
      * @since 1.0
      * @return void
      */
-     
+
     function bcp_cover_photo_screen(){
 
         // store buddypress object to $bp
@@ -276,7 +273,7 @@ if (!isset($bp)) return;
             // Pass the file to the avatar upload handler
             $bp = buddypress();
 
-            if ( bp_core_avatar_handle_upload( $_FILES, $upload_filter) ) 
+            if ( bp_core_avatar_handle_upload( $_FILES, $upload_filter) )
             {
                 // adjust current step
                 $bp->avatar_admin->step = 'crop-image';
@@ -304,7 +301,7 @@ if (!isset($bp)) return;
             // change avatar path for groups
             if ( bp_is_group_single() ) {
                 $args['avatar_dir'] = 'group-avatars';
-            }   
+            }
 
 
 
@@ -313,7 +310,7 @@ if (!isset($bp)) return;
                 bp_core_add_message( __( 'There was a problem cropping your cover photo.', 'buddypress' ), 'error' );
 
             } else {
-                
+
                 // update the default cover photo image for groups
                 if (isset($_POST['global-coverphoto']))
                 {
@@ -324,14 +321,14 @@ if (!isset($bp)) return;
                     );
 
                     $new_cover_photo = bcp_fetch_cover_photo($args);
-                   
+
                     update_option('__bcp_default_'.$type.'_cover_photo', $new_cover_photo['full']);
                 }
 
                 if ( bp_is_group_single() ) {
                     // if its a single group
                     // redirect to group home page
-                    
+
                     $current_displayed_group_url = trailingslashit( $groups_slug . $bp->groups->current_group->slug . '/');
 
                     groups_update_groupmeta($item_id, 'cover-photo-timestamp', md5(time()));
@@ -352,12 +349,12 @@ if (!isset($bp)) return;
         bp_core_load_template( apply_filters( 'bp_core_template_plugin', $template . '/single/plugins' ) );
 
         return;
-        
+
     }
 
     /**
      * loads jcrop stylesheet and javascript
-     * 
+     *
      * @author dunhakdis<codehaiku.io@gmail.com>
      * @since 2.0
      * @return void
@@ -384,7 +381,7 @@ if (!isset($bp)) return;
     /**
      * renders the template for adding/cropping cover photo
      */
-    function bp_cover_photo_screen_content() { 
+    function bp_cover_photo_screen_content() {
 
         $template = plugin_dir_path( __FILE__ ) . 'templates/cover-photo.php';
 
