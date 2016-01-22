@@ -3,7 +3,7 @@
  * Plugin Name: Gears
  * Plugin URI: http://themeforest.net/user/dunhakdis
  * Description: Gears empowers BuddyPress to have more features like cover photos, social login, shortcodes, and more!
- * Version: 4.0
+ * Version: 4.1
  * Author: Dunhakdis
  * Author URI: http://themeforest.net/user/dunhakdis
  * License: GPL2
@@ -19,7 +19,7 @@ DEFINE('GEARS_APP_NAMESPACE', 'Gears');
 /**
  * The current version of the plugin
  */
-DEFINE('GEARS_APP_VERSION', 4.0);
+DEFINE('GEARS_APP_VERSION', 4.1);
 
 /**
  * The plug-in absolute path
@@ -38,7 +38,7 @@ require_once GEARS_APP_PATH . 'locale.php';
 
 /**
  * Require updater file to check the version periodically
- * for changes and updates 
+ * for changes and updates
  */
 require_once GEARS_APP_PATH . 'update-check.php';
 
