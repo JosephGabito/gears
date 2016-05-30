@@ -7,7 +7,7 @@
  * @since 1.0
  */
 
-vc_map( 
+vc_map(
 	array(
 		"name" => __("BP Members List"),
 		"base" => "gears_bp_members_list",
@@ -23,27 +23,27 @@ vc_map(
 					"holder" => "",
 					"class" => "",
 					"admin_label" => true,
-					"heading" => __("Type"),
+					"heading" => __("Type", "gears"),
 					"param_name" => "type",
 					"value" => array(
-							'Active' => 'active',
-							'Newest' => 'newest',
-							'Popular' => 'popular',
-							'Online' => 'online',
-							'Alphabetical' => 'alphabetical',
-							'Random' => 'random'
+							__('Active', "gears") => 'active',
+							__('Newest', "gears") => 'newest',
+							__('Popular', "gears") => 'popular',
+							__('Online', "gears") => 'online',
+							__('Alphabetical', "gears") => 'alphabetical',
+							__('Random', "gears") => 'random'
 						),
-					"description" => __("Select what type of members you want to display.")
+					"description" => __("Select what type of members you want to display.", "gears")
 				),
 				array(
 					"type" => "textfield",
 					"holder" => "",
 					"class" => "",
 					"admin_label" => true,
-					"heading" => __("Max"),
+					"heading" => __("Max", "gears"),
 					"param_name" => "max_item",
 					"value" => 10,
-					"description" => __("How many members you want to display.")
+					"description" => __("How many members you want to display.", "gears")
 				)
 			)
 	)

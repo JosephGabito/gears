@@ -5,10 +5,10 @@
  *
  * @since 1.0
  */
- 
-// [gears_bp_groups_carousel type=’active’ max_item =’10’ max_slides=’7’ min_slides=’1’ item_width=’100’] 
 
-vc_map( 
+// [gears_bp_groups_carousel type=’active’ max_item =’10’ max_slides=’7’ min_slides=’1’ item_width=’100’]
+
+vc_map(
 	array(
 		"name" => __("BP Groups Carousel 2"),
 		"base" => "gears_bp_groups_carousel_2",
@@ -24,68 +24,68 @@ vc_map(
 					"holder" => "",
 					"class" => "",
 					"admin_label" => true,
-					"heading" => __("Type"),
+					"heading" => __("Type", "gears"),
 					"param_name" => "type",
 					"value" => array(
-							'Active' => 'active',
-							'Newest' => 'newest',
-							'Popular' => 'popular',
-							'Alphabetical' => 'alphabetical',
-							'Most Forum Topics' => 'most-forum-topics',
-							'Most Forum Posts' => 'most-forum-posts',
-							'Random' => 'random'
+							__('Active', "gears") => 'active',
+							__('Newest', "gears") => 'newest',
+							__('Popular', "gears") => 'popular',
+							__('Alphabetical', "gears") => 'alphabetical',
+							__('Most Forum Topics', "gears") => 'most-forum-topics',
+							__('Most Forum Posts', "gears") => 'most-forum-posts',
+							__('Random', "gears") => 'random'
 						),
-					"description" => __("The type of members you want to display.")
+					"description" => __("The type of members you want to display.", "gears")
 				),
 				array(
 					"type" => "textfield",
 					"holder" => "",
 					"class" => "",
 					"admin_label" => true,
-					"heading" => __("Max"),
+					"heading" => __("Max", "gears"),
 					"param_name" => "max_item",
 					"value" => 12,
-					"description" => __("The number of members you want to display.")
+					"description" => __("The number of members you want to display.", "gears")
 				),
 				array(
 					"type" => "textfield",
 					"holder" => "",
 					"class" => "",
 					"admin_label" => true,
-					"heading" => __("Max Slides"),
+					"heading" => __("Max Slides", "gears"),
 					"param_name" => "max_slides",
 					"value" => 7,
-					"description" => __("The maximum number of item to show per slide.")
+					"description" => __("The maximum number of item to show per slide.", "gears")
 				),
 				array(
 					"type" => "textfield",
 					"holder" => "",
 					"class" => "",
 					"admin_label" => true,
-					"heading" => __("Min Slides"),
+					"heading" => __("Min Slides", "gears"),
 					"param_name" => "min_slides",
 					"value" => 1,
-					"description" => __("The minimum number of item to show per slide.")
+					"description" => __("The minimum number of item to show per slide.", "gears")
 				),
 				array(
 					"type" => "textfield",
 					"holder" => "",
 					"class" => "",
 					"admin_label" => true,
-					"heading" => __("Slide Margin"),
+					"heading" => __("Slide Margin", "gears"),
 					"param_name" => "slide_margin",
 					"value" => 20,
-					"description" => __("The spacing for each item in the carousel.")
+					"description" => __("The spacing for each item in the carousel.", "gears")
 				),
 				array(
 					"type" => "textfield",
 					"holder" => "",
 					"class" => "",
 					"admin_label" => true,
-					"heading" => __("Item Width"),
+					"heading" => __("Item Width", "gears"),
 					"param_name" => "item_width",
 					"value" => '223',
-					"description" => sprintf(__("The width of each item (ex. '223'). Recommended maximum width '%s'"),BP_AVATAR_FULL_WIDTH)
+					"description" => sprintf(__("The width of each item (ex. '223'). Recommended maximum width '%s'", "gears"),BP_AVATAR_FULL_WIDTH)
 				)
 			)
 	)
