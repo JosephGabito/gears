@@ -5,8 +5,8 @@
  *
  * @since 1.0
  */
- 
-vc_map( 
+
+vc_map(
 	array(
 		"name" => __("Pricing Table"),
 		"base" => "gears_pricing_table",
@@ -23,62 +23,62 @@ vc_map(
 					"holder" => "",
 					"class" => "",
 					"admin_label" => true,
-					"heading" => __("Title"),
+					"heading" => __("Title", "gears"),
 					"param_name" => "title",
 					"value" => '',
-					"description" => __("Enter the title want. Example 'Basic Membership'.")
+					"description" => __("Enter the title want. Example 'Basic Membership'.", "gears")
 				),
 				array(
 					"type" => "textfield",
 					"holder" => "",
 					"class" => "",
 					"admin_label" => true,
-					"heading" => __("Price Label"),
+					"heading" => __("Price Label", "gears"),
 					"param_name" => "price_label",
 					"value" => '$0.00',
-					"description" => __("The pricing of this services/products offered. Example '$10.00/Month'.")
+					"description" => __("The pricing of this services/products offered. Example '$10.00/Month'.", "gears")
 				),
 				array(
 					"type" => "textfield",
 					"holder" => "",
 					"class" => "",
 					"admin_label" => true,
-					"heading" => __("Button Link"),
+					"heading" => __("Button Link", "gears"),
 					"param_name" => "button_link",
 					"value" => '',
-					"description" => __("The link where you want to redirect the user after clicking the pricing table button.")
+					"description" => __("The link where you want to redirect the user after clicking the pricing table button.", "gears")
 				),
 				array(
 					"type" => "textfield",
 					"holder" => "",
 					"class" => "",
 					"admin_label" => true,
-					"heading" => __("Button Label"),
+					"heading" => __("Button Label", "gears"),
 					"param_name" => "button_label",
 					"value" => '',
-					"description" => __("Add label to your button. Example 'Buy' or 'Purchase'.")
+					"description" => __("Add label to your button. Example 'Buy' or 'Purchase'.", "gears")
 				),
 				array(
 					"type" => "exploded_textarea",
 					"holder" => "",
 					"class" => "",
 					"admin_label" => true,
-					"heading" => __("Features/Services Offered"),
+					"heading" => __("Features/Services Offered", "gears"),
 					"param_name" => "features",
 					"value" => 'Service1, Service2, !Not Available Service',
-					"description" => __("List all the services you offer in this product/item/services (separate it by a newline). Prepend '!' in text to indicate the feature which is not available. Example 'Free Swag, !24/7 Customer Support'")
+					"description" => __("List all the services you offer in this product/item/services (separate it by a newline). Prepend '!' in text to indicate the feature which is not available. Example 'Free Swag, !24/7 Customer Support'", "gears")
 				),
 				array(
 					"type" => "checkbox",
 					"holder" => "",
 					"class" => "",
 					"admin_label" => true,
-					"heading" => __("Make this popular"),
+					"heading" => __("Make this popular", "gears"),
 					"param_name" => "popular",
 					"value" => array(
-						'Yes, make this item popular.' => 'true'
+						__('Yes, make this item popular.', "gears") => 'true'
 					),
-					"description" => __("Tick the checkbox to make this pricing popular. It will append a pretty nice star in the title.")
+					"description" => __("Tick the checkbox to make this pricing popular. It will append a pretty nice star in the title.", "gears")
 				)
 			)
 	)

@@ -6,7 +6,7 @@
  * @since 1.0
  */
 
-vc_map( 
+vc_map(
 	array(
 		"name" => __("BP Members Carousel"),
 		"base" => "gears_bp_members_carousel",
@@ -22,18 +22,18 @@ vc_map(
 					"holder" => "",
 					"class" => "",
 					"admin_label" => true,
-					"heading" => __("Type"),
+					"heading" => __("Type", "gears"),
 					"admin_label" => true,
 					"param_name" => "type",
 					"value" => array(
-							'Active' => 'active',
-							'Newest' => 'newest',
-							'Popular' => 'popular',
-							'Online' => 'online',
-							'Alphabetical' => 'alphabetical',
-							'Random' => 'random'
+							__('Active', "gears") => 'active',
+							__('Newest', "gears") => 'newest',
+							__('Popular', "gears") => 'popular',
+							__('Online', "gears") => 'online',
+							__('Alphabetical', "gears") => 'alphabetical',
+							__('Random', "gears") => 'random'
 						),
-					"description" => __("The type of members you want to display.")
+					"description" => __("The type of members you want to display.", "gears")
 				),
 				array(
 					"type" => "textfield",
@@ -41,10 +41,10 @@ vc_map(
 					"class" => "",
 					"admin_label" => true,
 					"admin_label" => true,
-					"heading" => __("Max"),
+					"heading" => __("Max", "gears"),
 					"param_name" => "max_item",
 					"value" => 10,
-					"description" => __("The number of members you want to display.")
+					"description" => __("The number of members you want to display.", "gears")
 				),
 				array(
 					"type" => "textfield",
@@ -52,10 +52,10 @@ vc_map(
 					"class" => "",
 					"admin_label" => true,
 					"admin_label" => true,
-					"heading" => __("Max Slide"),
+					"heading" => __("Max Slide", "gears"),
 					"param_name" => "max_slides",
 					"value" => 7,
-					"description" => __("Maximum number of item to display in slides.")
+					"description" => __("Maximum number of item to display in slides.", "gears")
 				),
 				array(
 					"type" => "textfield",
@@ -63,10 +63,10 @@ vc_map(
 					"class" => "",
 					"admin_label" => true,
 					"admin_label" => true,
-					"heading" => __("Min Slide"),
+					"heading" => __("Min Slide", "gears"),
 					"param_name" => "min_slides",
 					"value" => 1,
-					"description" => __("Minimum number of item to display in slides. Applies to mobile.")
+					"description" => __("Minimum number of item to display in slides. Applies to mobile.", "gears")
 				),
 				array(
 					"type" => "textfield",
@@ -74,10 +74,10 @@ vc_map(
 					"class" => "",
 					"admin_label" => true,
 					"admin_label" => true,
-					"heading" => __("Slide Margin"),
+					"heading" => __("Slide Margin", "gears"),
 					"param_name" => "margin",
 					"value" => 40,
-					"description" => __("The spacing for each item in the carousel.")
+					"description" => __("The spacing for each item in the carousel.", "gears")
 				),
 				array(
 					"type" => "textfield",
@@ -85,10 +85,10 @@ vc_map(
 					"class" => "",
 					"admin_label" => true,
 					"admin_label" => true,
-					"heading" => __("Item Width"),
+					"heading" => __("Item Width", "gears"),
 					"param_name" => "item_width",
 					"value" => 228,
-					"description" => sprintf(__("The width of each item in the slide. Recommended maximum width is '%s'"), BP_AVATAR_FULL_WIDTH)
+					"description" => sprintf(__("The width of each item in the slide. Recommended maximum width is '%s'", "gears"), BP_AVATAR_FULL_WIDTH)
 				)
 			)
 	)

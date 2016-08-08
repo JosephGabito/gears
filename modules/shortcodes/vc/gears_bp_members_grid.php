@@ -6,7 +6,7 @@
  * @since 1.0
  */
 //[gears_bp_members_grid type="alphabetical" max_item="12" size="2"]
-vc_map( 
+vc_map(
 	array(
 		"name" => __("BP Members Grid"),
 		"base" => "gears_bp_members_grid",
@@ -22,34 +22,34 @@ vc_map(
 					"holder" => "",
 					"class" => "",
 					"admin_label" => true,
-					"heading" => __("Type"),
+					"heading" => __("Type", "gears"),
 					"param_name" => "type",
 					"value" => array(
-							'Active' => 'active',
-							'Newest' => 'newest',
-							'Popular' => 'popular',
-							'Online' => 'online',
-							'Alphabetical' => 'alphabetical',
-							'Random' => 'random'
+							__('Active', "gears") => 'active',
+							__('Newest', "gears") => 'newest',
+							__('Popular', "gears") => 'popular',
+							__('Online', "gears") => 'online',
+							__('Alphabetical', "gears") => 'alphabetical',
+							__('Random', "gears") => 'random'
 						),
-					"description" => __("Select what type of members you want to display.")
+					"description" => __("Select what type of members you want to display.", "gears")
 				),
 				array(
 					"type" => "textfield",
 					"holder" => "",
 					"class" => "",
 					"admin_label" => true,
-					"heading" => __("Max"),
+					"heading" => __("Max", "gears"),
 					"param_name" => "max_item",
 					"value" => 10,
-					"description" => __("How many members you want to display.")
+					"description" => __("How many members you want to display.", "gears")
 				),
 				array(
 					"type" => "dropdown",
 					"holder" => "",
 					"class" => "",
 					"admin_label" => true,
-					"heading" => __("Columns"),
+					"heading" => __("Columns", "gears"),
 					"param_name" => "columns",
 					"value" => array(
 							'4' => '3',
@@ -57,7 +57,7 @@ vc_map(
 							'3' => '4',
 							'6' => '6'
 						),
-					"description" => __("Select the number of columns.")
+					"description" => __("Select the number of columns.", "gears")
 				)
 			)
 	)

@@ -4,7 +4,7 @@
  *
  * @since 1.0
  */
-vc_map( 
+vc_map(
 	array(
 		"name" => __("Members Activity Stream"),
 		"base" => "gears_bp_activity_stream",
@@ -20,10 +20,10 @@ vc_map(
 					"holder" => "",
 					"class" => "",
 					"admin_label" => true,
-					"heading" => __("Title"),
+					"heading" => __("Title", "gears"),
 					"param_name" => "title",
 					"value" => __('Members Activity Stream'),
-					"description" => __("Leave blank to disable widget title.")
+					"description" => __("Leave blank to disable widget title.", "gears")
 				)
 			)
 	)
