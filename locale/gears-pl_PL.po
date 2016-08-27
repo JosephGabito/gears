@@ -1,0 +1,238 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gears\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-22 19:27+0000\n"
+"PO-Revision-Date: 2016-08-26 11:47+0200\n"
+"Last-Translator: S1awek\n"
+"Language-Team: Polish\n"
+"Language: pl_PL\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10 >= 2 && n%10<=4 &&(n"
+"%100<10||n%100 >= 20)? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.8\n"
+
+#: gears-engine.php:101
+msgid "Connect w/ Facebook"
+msgstr "Połączyć w / Facebook"
+
+#: modules/bp-cover-photo/index.php:35 modules/bp-cover-photo/index.php:79
+#: modules/bp-cover-photo/index.php:379 modules/shortcodes/library.php:163
+msgid "Cover Photo"
+msgstr "Obrazek tła"
+
+#: modules/bp-cover-photo/index.php:48
+msgid "Customize"
+msgstr "Dostosuj"
+
+#: modules/bp-cover-photo/index.php:132
+msgid "Customise"
+msgstr "Dostosuj"
+
+#: modules/facebook-login/index.php:100
+msgid ""
+"Unable to register your profile. Please make sure you have a valid email "
+"address in your Facebook account."
+msgstr ""
+"Nie można zarejestrować Twojego profilu. Upewnij się że podałeś(aś) "
+"prawidłowy email swojego konta Facebook."
+
+#: modules/facebook-login/index.php:107
+msgid "Cannot fetch user data from your Facebook Profile."
+msgstr "Nie można pobrać danych użytkownika ze swojego profilu na Facebooku."
+
+#: modules/facebook-login/index.php:113
+msgid ""
+"The username or email you are trying to connect with your facebook account "
+"is already registered."
+msgstr ""
+"Nazwa użytkownika lub e-mail, który próbujesz połączyć z kontem Facebook "
+"jest już zarejestrowany."
+
+#: modules/facebook-login/index.php:119
+msgid ""
+"There was an error trying to communicate with the Facebook. Either you did "
+"not allowed this website to access your basic information or there was a "
+"glitch on their side. Please come back again later."
+msgstr ""
+"Wystąpił błąd podczas próby komunikacji z Facebook. Albo Facebook nie "
+"pozwolił tej stronie na dostęp do podstawowych informacji lub nastąpił "
+"problem po ich stronie. Proszę wrócić później."
+
+#: modules/google-login/index.php:67
+msgid ""
+"There was an error connecting with Google OAuth API. If you are the "
+"Administrator of this website, please check the Client ID and Client Secret "
+"in your configuration."
+msgstr ""
+"Wystąpił błąd podczas łączenia się z Google OAuth API. Jeśli jesteś "
+"administratorem tej strony, należy sprawdzić identyfikator klienta (Client "
+"ID) i Client Secret w konfiguracji."
+
+#: modules/shortcodes/library.php:17
+msgid ""
+"Sorry, BuddyPress must be enabled for this shortcode to work properly. If "
+"you have already installed and activated BuddyPress plugin, please make sure "
+"to enable this component inside \"Settings\" &rarr; \"BuddyPress\" &rarr; "
+"\"Components\"."
+msgstr ""
+"Niestety, BuddyPress musi być włączony aby ten shortcode działał poprawnie. "
+"Jeśli masz już zainstalowaną i aktywowaną wtyczkę BuddyPressa, upewnij się, "
+"aby włączyć ten składnik w \"Ustawienia\" → \"BuddyPressa\" → \"Akcesoria\"."
+
+#: modules/shortcodes/library.php:67
+msgid "Sign in"
+msgstr "Zaloguj się"
+
+#: modules/shortcodes/library.php:70 modules/shortcodes/library.php:71
+msgid "Create New Account"
+msgstr "Utwórz nowe konto"
+
+#: modules/shortcodes/library.php:336 modules/shortcodes/library.php:412
+msgid ""
+"<div class=\"alert alert-warning\">Oops! BuddyPress Groups Component is not "
+"currently enabled.</div>"
+msgstr ""
+"<div class=\"alert alert-warning\"> Ups! Opcja BuddyPress \"Grupy\" nie jest "
+"aktualnie aktywna. </div>"
+
+#: modules/shortcodes/library.php:379 modules/shortcodes/library.php:528
+msgid "Member"
+msgstr "Użytkownik"
+
+#: modules/shortcodes/library.php:381 modules/shortcodes/library.php:530
+msgid "Members"
+msgstr "Użytkownicy"
+
+#: modules/shortcodes/library.php:395 modules/shortcodes/library.php:465
+#: modules/shortcodes/library.php:547
+#: modules/shortcodes/templates/bp-groups-list.php:60
+msgid "There are no groups to display. Please try again soon."
+msgstr "Brak grup do wyświetlenia. Spróbuj ponownie za chwilę."
+
+#: modules/shortcodes/library.php:520
+msgid "Active "
+msgstr "Aktywne"
+
+#: modules/shortcodes/library.php:613
+msgid "View Profile"
+msgstr "Zobacz profil"
+
+#: modules/shortcodes/library.php:633 modules/shortcodes/library.php:655
+msgid "View Conversation"
+msgstr "Zobacz konwersację"
+
+#: modules/shortcodes/library.php:640
+msgid "Mark as Favorite"
+msgstr "Oznacz jako ulubione"
+
+#: modules/shortcodes/library.php:640
+msgid "Favorite"
+msgstr "Ulubiony"
+
+#: modules/shortcodes/library.php:642
+msgid "Remove Favorite"
+msgstr "Nie lubię"
+
+#: modules/bp-cover-photo/templates/cover-photo-crop.php:12
+msgid "Avatar to crop"
+msgstr "Awatar do kadrowania"
+
+#: modules/bp-cover-photo/templates/cover-photo-crop.php:40
+msgid ""
+"Make this image the default cover photo for new users and users who are yet "
+"to upload a cover photo."
+msgstr ""
+"Ustaw ten obraz jako domyślne dla nowych użytkowników oraz użytkowników "
+"którzy nie ustawili jeszcze zdjęcia w tle."
+
+#: modules/bp-cover-photo/templates/cover-photo.php:27
+msgid ""
+"Select an image from your computer to upload or change your cover photo. \n"
+"                The image must be larger than %spx in width and %spx in "
+"height (%sx%s pixels) \n"
+"                to attain quality cover photo."
+msgstr ""
+"Wybierz obrazek ze swojego komputera aby ustawić lub zmienić zdjęcie w "
+"tle. \n"
+"                Obrazek musi być szerszy niż %spx i wyższy niż %spx  (%sx%s "
+"px) \n"
+"                aby osiągnąć zadowalającą jakość."
+
+#: modules/bp-cover-photo/templates/cover-photo.php:35
+msgid ""
+"Click below to select a JPG, GIF or PNG format photo from your computer and "
+"then click 'Upload Image' to proceed."
+msgstr ""
+"Kliknij poniżej, aby wybrać plik JPG, GIF lub PNG z komputera, a następnie "
+"kliknij przycisk \"Dodaj obraz\", aby kontynuować."
+
+#: modules/bp-cover-photo/templates/cover-photo.php:46
+msgid "Upload Image"
+msgstr "Dodaj obraz"
+
+#: modules/bp-cover-photo/templates/customise.php:12
+msgid "Mode"
+msgstr "Tryb"
+
+#: modules/bp-cover-photo/templates/customise.php:30
+msgid "Color 1"
+msgstr "Kolor 1"
+
+#: modules/bp-cover-photo/templates/customise.php:35
+msgid ""
+"This color will be used as the background color if the solid option is "
+"selected. \n"
+"\t\t      \t\tOtherwise, it will be used as the color stop 1 for the "
+"gradient option."
+msgstr ""
+"Kolor ten będzie stosowany jako kolor tła, jeśli wybrana jest opcja \"bez "
+"gradientu\".\n"
+"\t\t      \t\tW przeciwnym razie, Kolor jeden będzie użyty jako pierwszy "
+"kolor gradientu."
+
+#: modules/bp-cover-photo/templates/customise.php:43
+msgid "Color 2"
+msgstr "Kolor 2"
+
+#: modules/bp-cover-photo/templates/customise.php:47
+msgid ""
+"This color will serve as the color stop 2 if the gradient option is selected."
+msgstr "Ten kolor będzie użyty jako drugi kolor gradientu."
+
+#: modules/bp-cover-photo/templates/customise.php:54
+msgid "Foreground"
+msgstr "\"Pierwszy plan\""
+
+#: modules/bp-cover-photo/templates/customise.php:58
+msgid "The color of the text. Make sure it blends well with the background :)."
+msgstr "Kolor tekstu. Upewnij się, że dobrze współgra z tłem :)."
+
+#: modules/bp-cover-photo/templates/customise.php:66
+msgid "Save Customisation"
+msgstr "Zapisz Zmiany"
+
+#: modules/bp-cover-photo/templates/customise.php:67
+msgid "Reset"
+msgstr "Reset"
+
+#. Name of the plugin
+msgid "Gears"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Gears empowers BuddyPress to have more features like cover photos, social "
+"login, shortcodes, and more!"
+msgstr ""
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "http://themeforest.net/user/dunhakdis"
+msgstr ""
+
+#. Author of the plugin
+msgid "Dunhakdis"
+msgstr ""
