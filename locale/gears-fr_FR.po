@@ -1,21 +1,24 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Gears\n"
-"POT-Creation-Date: 2016-11-25 10:54+0100\n"
-"PO-Revision-Date: 2016-05-30 15:52+0800\n"
+"POT-Creation-Date: 2016-11-25 10:56+0100\n"
+"PO-Revision-Date: 2016-11-25 10:56+0100\n"
 "Last-Translator: \n"
-"Language-Team: dunhakdis <codehaiku.io@gmail.com>\n"
-"Language: en_US\n"
+"Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.11\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;translate;__;_e;_n;_x;_ex;_nx;"
-"esc_attr__;esc_attr_e;esc_attr_x;esc_html__;esc_html_e;esc_html_x;_n_noop;"
-"_nx_noop;translate_nooped_plural\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: gears.php\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #: ../gears-engine.php:101
 msgid "Connect w/ Facebook"
@@ -26,19 +29,19 @@ msgstr ""
 #: ../modules/bp-cover-photo/index.php:376
 #: ../modules/shortcodes/library.php:163
 msgid "Cover Photo"
-msgstr ""
+msgstr "Photo de couverture"
 
 #: ../modules/bp-cover-photo/index.php:48
 msgid "Customize"
-msgstr ""
+msgstr "Personnaliser"
 
 #: ../modules/bp-cover-photo/index.php:129
 msgid "Customise"
-msgstr ""
+msgstr "Personnaliser"
 
 #: ../modules/bp-cover-photo/index.php:177
 msgid "Profile customisation saved."
-msgstr ""
+msgstr "Personnalisation du profil sauvegardée."
 
 #: ../modules/bp-cover-photo/index.php:180
 msgid "There was an error saving your customisation. Authorization Required."
@@ -62,7 +65,7 @@ msgstr ""
 
 #: ../modules/bp-cover-photo/index.php:310
 msgid "There was a problem cropping your cover photo."
-msgstr ""
+msgstr "Un problème est survenu pendant le recadrage de votre photo."
 
 #: ../modules/bp-cover-photo/index.php:344
 msgid "Your new cover photo was uploaded successfully."
@@ -77,10 +80,12 @@ msgid ""
 "Make this image the default cover photo for new users and users who are yet "
 "to upload a cover photo."
 msgstr ""
+"Faire de cette image la photo de couverture par défaut pour les nouveaux "
+"utilisateurs et utilisateurs sans photo de couverture."
 
 #: ../modules/bp-cover-photo/templates/cover-photo-crop.php:46
 msgid "Crop Image"
-msgstr ""
+msgstr "Retailler l’image"
 
 #: ../modules/bp-cover-photo/templates/cover-photo.php:27
 #, php-format
@@ -90,16 +95,22 @@ msgid ""
 "height (%sx%s pixels) \n"
 "                to attain quality cover photo."
 msgstr ""
+"Sélectionnez une image à partir de votre ordinateur pour télécharger ou "
+"modifier votre photo de couverture. L’image doit être plus grande que %spx "
+"en largeur et %spx en hauteur (%sx%s pixels) pour atteindre une qualité "
+"correcte."
 
 #: ../modules/bp-cover-photo/templates/cover-photo.php:35
 msgid ""
 "Click below to select a JPG, GIF or PNG format photo from your computer and "
 "then click 'Upload Image' to proceed."
 msgstr ""
+"Cliquez ci-dessous pour sélectionner un fichier photo JPG, GIF ou PNG depuis "
+"de votre ordinateur, puis cliquez sur « Envoyer une image » pour continuer."
 
 #: ../modules/bp-cover-photo/templates/cover-photo.php:46
 msgid "Upload Image"
-msgstr ""
+msgstr "Envoyer l'image"
 
 #: ../modules/bp-cover-photo/templates/customise.php:12
 msgid "Mode"

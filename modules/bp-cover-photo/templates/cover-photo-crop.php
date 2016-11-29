@@ -28,7 +28,7 @@
 <?php if (current_user_can('manage_options')) { ?>
 <div id="admin-only-bcp-cover-photo-settings" class="alert alert-info">
     <label for="global-coverphoto">
-        <?php 
+        <?php
             if (bp_is_group()) {
                 $type = 'group';
             } else {
@@ -43,16 +43,16 @@
 </div>
 <?php } ?>
 <div class="break-row-top">
-    <input type="submit" id="crop" name="avatar-crop-submit" value="Crop Image"/> 
+    <input type="submit" id="crop" name="avatar-crop-submit" value="<?php _e( 'Crop Image', 'gears' ); ?>" />
 </div>
 
 <script>
 jQuery(function($) {
-    
+
 
     var $avatarToCrop = $('#avatar-to-crop');
-        
-        imagesLoaded ($avatarToCrop, function() 
+
+        imagesLoaded ($avatarToCrop, function()
         {
             var img_width = <?php echo BCP_MAX_WIDTH; ?>;
             var img_height = <?php echo BCP_MAX_HEIGHT; ?>;
