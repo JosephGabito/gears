@@ -64,7 +64,7 @@ if (!isset($bp)) return;
 
         $current_user = get_current_user_id();
 
-        if ( current_user_can('manage_options') ||  $group_creator_id == $current_user)
+        if ( current_user_can('manage_options') || $group_creator_id == $current_user || groups_is_user_admin( $current_user, $current_group_id ) )
         {
             $groups_slug = trailingslashit( bcp_get_groups_slug() );
             /**
