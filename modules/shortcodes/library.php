@@ -37,16 +37,22 @@ class Gears_Shortcodes{
 				'gears_login' => 'gears_login',
 				'gears_row' => 'gears_row',
 				'gears_column' => 'gears_column',
+				'gears_recent_posts' => 'gears_recent_posts',
 			);
 
 		// register all the shortcodes
-		foreach ($shortcode_list as $shortcode_id => $shortcode_callback) {
-			add_shortcode($shortcode_id, array($this, $shortcode_callback));
+		foreach ( $shortcode_list as $shortcode_id => $shortcode_callback ) {
+			add_shortcode( $shortcode_id, array( $this, $shortcode_callback ) );
 		}
 
 		return $this;
 	}
 
+	function gears_recent_posts( $atts, $content )
+	{
+		$output = '';
+		return $this->get_template_file( $atts, 'recent-posts.php');
+	}
 	/**
 	 * Login form shortcode
 	 * @param  array  $atts    [description]
