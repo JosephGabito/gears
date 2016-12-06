@@ -19,7 +19,6 @@ DEFINE('BCP_THUMB_MAX_WIDTH',  570);
 DEFINE('BCP_THUMB_MAX_HEIGHT', 226);
 DEFINE('BCP_ENABLE_CUSTOMISE', false);
 
-
 require_once 'bcp-core.php';
 require_once 'bcp-filters.php';
 

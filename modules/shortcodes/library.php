@@ -65,7 +65,8 @@ class Gears_Shortcodes{
 		$args = array('echo' => false);
 		ob_start();
 		?>
-		<?php if (!is_user_logged_in()) {?>
+		<?php if ( ! is_user_logged_in() ) { ?>
+			
 		<div class="gears-login-wrap">
 			<div class="gears-login-links">
 				<ul>
