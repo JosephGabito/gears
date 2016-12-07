@@ -19,7 +19,7 @@ if ( ! class_exists( 'Gears' ) )
 		function __construct() {
 
 			// modules
-			add_action('init', array($this,'load_modules'));
+			add_action('init', array( $this,'load_modules'));
 
 			// front-end stylesheet
 			add_action('wp_enqueue_scripts', array($this, 'stylesheet'));
@@ -29,6 +29,9 @@ if ( ! class_exists( 'Gears' ) )
 
 			// BuddyPress config
 			add_action('bp_init', array($this, 'bp_setup'), 0);
+
+			// Loads the Gears Widgets.
+			$this->load_widgets_instance();
 
 			return;
 		}
@@ -162,6 +165,13 @@ if ( ! class_exists( 'Gears' ) )
 
 			return;
 
+		}
+
+		function load_widgets_instance() {
+
+			require_once GEARS_APP_PATH . '/modules/widgets/widgets.php';
+
+			return;
 		}
 
 	}
