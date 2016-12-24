@@ -194,71 +194,16 @@ class Gears_Shortcodes{
 	}
 
 	/**
-	 * gears pricing table
-	 *
-	 *	Title
-	 *	Price Label
-	 *	Features/Services Offered (separated by comma).
-	 *  	Append '[x]' in the feature list to suggest a feature which is not available.
-	 *	  	Otherwise, append '[/]' in the feature list to suggest that the feature is
-	 *	  	available.
-	 *	Button Label
-	 *	Button Link
-	 *	Color Scheme
-	 *
+	 * Gears Pricing Table
 	 */
-
 	function gears_pricing_table( $atts ){
 
-		extract(
-			shortcode_atts( array(
-				'title' => '',
-				'price_label' => '$0.00',
-				'features' => '',
-				'button_label' => 'Purchase',
-				'button_link' => '#',
-				'popular' => 'false',
-				'color' => 'alizarin'
-			), $atts )
-		);
-
-		if( !empty( $features ) ){
-			$features = explode( ',', $features );
-		}else{
-			$features = array();
-		}
-
-		$output = '';
-
-		if( 'true' == $popular ){
-			$title .= ' <span class="glyphicon glyphicon-star"></span>';
-		}
-		$output .= '<div class="clearfix">';
-			$output .= '<div class="gears-pricing-table">';
-				$output .= '<div class="gears-pricing-table-title widget-title-wrap"><h3 class="widget-title">'.$title.'</h3></div>';
-				$output .= '<div class="gears-pricing-table-price-label"><h3>'.$price_label.'</h3></div>';
-				$output .= '<div class="gears-pricing-table-features">';
-					if( !empty( $features ) ){
-						foreach( (array) $features as $feature){
-							$feature = trim( $feature );
-
-							if( '!' == substr( $feature, 0, 1 ) ){
-								$output .= '<li class="gears-pricing-table-features-list"><span class="text-danger glyphicon glyphicon-remove-circle"></span> '.substr( $feature, 1 ).'</li>';
-							}else{
-								$output .= '<li class="gears-pricing-table-features-list"><span class="text-success glyphicon glyphicon-ok-circle"></span> '.$feature.'</li>';
-							}
-						}
-					}
-				$output .= '</div>';
-				$output .= '<div class="gears-pricing-table-btn">';
-					$output .= '<a href="'.$button_link.'" class="btn btn-success btn-lg">'.$button_label.'</a>';
-				$output .= '</div>';
-			$output .= '</div>';
-		$output .= '</div>';
-
-		return $output;
+		return $this->get_template_file( $atts, 'pricing-tables.php' );
 	}
 
+	/**
+	 * Gears Template File Loader Method
+	 */
 	function get_template_file($atts, $file = '') {
 
 		ob_start();
