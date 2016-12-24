@@ -291,6 +291,10 @@ left: 140px;
 /**
  * 2. Groups Grid
  */
+.gears-bp-groups-grid {
+    padding: 0;
+    margin: 0;
+}
 .gears-bp-groups-grid li.bp-groups-grid-item {
     margin-bottom: 0;
     overflow: hidden;
@@ -388,4 +392,13 @@ left: 140px;
 .bp-groups-carousel .groups-count {
     display: block;
     font-style: italic;
+}
+
+.gears-shortcode-element {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.gears-clearfix {
+    clear: both;
 }
