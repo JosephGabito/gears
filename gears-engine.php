@@ -22,7 +22,7 @@ if ( ! class_exists( 'Gears' ) )
 			add_action('init', array( $this,'load_modules'));
 
 			// front-end stylesheet
-			add_action('wp_enqueue_scripts', array($this, 'stylesheet'));
+			add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts'));
 
 			// admin stylesheets
 			add_action('admin_init', array( $this, 'admin_styles' ));
@@ -39,10 +39,12 @@ if ( ! class_exists( 'Gears' ) )
 		/**
 		 * Loads the stylehsheet
 		 */
-		public function stylesheet()
+		public function enqueue_scripts()
 		{
 
 		    wp_enqueue_style( 'gears-stylesheet', plugins_url('assets/style.css', __FILE__), array(), 1 );
+
+		    wp_enqueue_script( 'gears-vendor-js', plugins_url('assets/vendor.js', __FILE__), array(), '1.0', true );
 
     		return $this;
 		}

@@ -39,6 +39,13 @@ class Gears_Shortcodes{
 				'gears_column' => 'gears_column',
 				'gears_recent_posts' => 'gears_recent_posts',
 			);
+		
+		// Counter Shortcode
+		$counter_shortcode = apply_filters( 'gears_counters_enabled', '__return_false', 10, 1 );
+
+		if ( true === $counter_shortcode ) {
+			$shortcode_list['gears_counter'] = 'gears_counter';
+		}
 
 		// register all the shortcodes
 		foreach ( $shortcode_list as $shortcode_id => $shortcode_callback ) {
@@ -53,11 +60,9 @@ class Gears_Shortcodes{
 		$output = '';
 		return $this->get_template_file( $atts, 'recent-posts.php');
 	}
+	
 	/**
-	 * Login form shortcode
-	 * @param  array  $atts    [description]
-	 * @param  string $content [description]
-	 * @return string          [description]
+	 * Login Shortcode
 	 */
 	function gears_login($atts, $content)
 	{
@@ -199,6 +204,12 @@ class Gears_Shortcodes{
 	function gears_pricing_table( $atts ){
 
 		return $this->get_template_file( $atts, 'pricing-tables.php' );
+	}
+
+	function gears_counter( $atts ) {
+
+		return $this->get_template_file( $atts, 'counters.php' );
+
 	}
 
 	/**

@@ -52,40 +52,44 @@ if ( 'true' == $popular ) { ?>
 
 		<?php if ( ! empty( $features ) ) { ?>
 
-			<?php foreach ( ( array ) $features as $feature ) { ?>
+			<ul class="gears-pricing-table-features-list-wrap">
 
-				<?php $feature = trim( $feature ); ?>
+				<?php foreach ( ( array ) $features as $feature ) { ?>
 
-				<?php if ( '!' == substr( $feature, 0, 1 ) ) { ?>
-					
-					<li class="gears-pricing-table-features-list">
+					<?php $feature = trim( $feature ); ?>
 
-						<span class="text-danger glyphicon glyphicon-remove-circle"></span> 
+					<?php if ( '!' == substr( $feature, 0, 1 ) ) { ?>
+						
+						<li class="gears-pricing-table-features-list">
 
-						<?php echo esc_html__( substr( $feature, 1 ) ); ?>
+							<span class="text-danger glyphicon glyphicon-remove-circle"></span> 
 
-					</li>
+							<?php echo esc_html__( substr( $feature, 1 ) ); ?>
 
-				<?php } else { ?>
-					
-					<li class="gears-pricing-table-features-list">
+						</li>
 
-						<span class="text-success glyphicon glyphicon-ok-circle"></span>
+					<?php } else { ?>
+						
+						<li class="gears-pricing-table-features-list">
 
-						<?php echo esc_html__( $feature ); ?>
+							<span class="text-success glyphicon glyphicon-ok-circle"></span>
 
-					</li>
+							<?php echo esc_html__( $feature ); ?>
+
+						</li>
+
+					<?php } ?>
 
 				<?php } ?>
-
-			<?php } ?>
 			
+			</ul>
+
 		<?php } ?>
 	</div>
 
 	<div class="gears-pricing-table-btn">
 
-		<a href="<?php echo esc_url( $button_link ); ?>" class="btn btn-success btn-lg">
+		<a href="<?php echo esc_url( $button_link ); ?>" class="btn btn-primary btn-lg">
 			
 			<?php echo esc_html__( $button_label ); ?>
 

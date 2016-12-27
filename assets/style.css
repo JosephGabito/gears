@@ -1,6 +1,6 @@
 /**
  * Gears Stylesheet
- * @version 2.1
+ * @version 2.2
  * @package gears
  */
 
@@ -158,6 +158,11 @@ left: 140px;
     border: 1px solid #e1e1e1;
     background: #fff;
     padding: 24px;
+}
+
+.gears-pricing-table-features-list-wrap {
+    margin: 0;
+    padding: 0;
 }
 
 .gears-pricing-table-title,
@@ -401,4 +406,25 @@ left: 140px;
 
 .gears-clearfix {
     clear: both;
+}
+
+/**
+ * Gears Counter
+ */
+.gears-counter {
+    text-align: center;
+    padding: 25px;
+    background: #eee;
+}
+
+.gears-counter.transparent {
+    background: transparent;
+    border: 2px solid #eee;
+}
+
+.gears-counter-symbol,
+.gears-counter-unit,
+.gears-counter-value {
+    font-weight: bold;
+    font-size: 30px;
 }

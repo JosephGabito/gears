@@ -51,4 +51,5 @@ require_once GEARS_APP_PATH . 'gears-engine.php';
  * Start the app
  */
 $Gears = new Gears();
+
 ?>
