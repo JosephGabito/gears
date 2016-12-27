@@ -47,6 +47,20 @@ class Gears_Shortcodes{
 			$shortcode_list['gears_counter'] = 'gears_counter';
 		}
 
+		// Alerts Shortcode
+		$alerts_shortcode = apply_filters( 'gears_alerts_enabled', '__return_false', 10, 1 );
+
+		if ( true === $alerts_shortcode ) {
+			$shortcode_list['gears_alert'] = 'gears_alert';
+		}
+
+		// Buttons Shortcode
+		$buttons_shortcode = apply_filters( 'gears_buttons_enabled', '__return_false', 10, 1 );
+
+		if ( true === $buttons_shortcode ) {
+			$shortcode_list['gears_button'] = 'gears_button';
+
+		}
 		// register all the shortcodes
 		foreach ( $shortcode_list as $shortcode_id => $shortcode_callback ) {
 			add_shortcode( $shortcode_id, array( $this, $shortcode_callback ) );
@@ -209,6 +223,24 @@ class Gears_Shortcodes{
 	function gears_counter( $atts ) {
 
 		return $this->get_template_file( $atts, 'counters.php' );
+
+	}
+
+	/**
+	 * Gears Alert
+	 */
+	function gears_alert( $atts ) {
+
+		return $this->get_template_file( $atts, 'alerts.php' );
+
+	}
+
+	/**
+	 * Gears Buttons
+	 */
+	function gears_button( $atts ) {
+
+		return $this->get_template_file( $atts, 'buttons.php' );
 
 	}
 

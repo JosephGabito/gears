@@ -428,3 +428,93 @@ left: 140px;
     font-weight: bold;
     font-size: 30px;
 }
+
+/**
+ * Gears Alert
+ */
+.gears-alert-element {
+    position: relative;
+}
+.gears-alert {
+    padding: 15px;
+    border-color: #444;
+    background: #eee;
+    border: 1px solid;
+    border-radius: 4px;
+
+}
+.gears-alert-close {
+    float: right;
+    position: absolute;
+    top: 6px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.gears-alert.gears-alert-info{
+    background: #03A9F4;
+    border-color: #2196F3;
+    color: #fff;
+}
+
+.gears-alert.gears-alert-info{
+    background: #03A9F4;
+    border-color: #2196F3;
+    color: #fff;
+}
+
+.gears-alert.gears-alert-warning{
+    border-color: #FFC107;
+    background: #FFEB3B;
+    color: #444;
+}
+
+.gears-alert.gears-alert-danger{
+    border-color: #FF5722;
+    background: #FF9800;
+    color: #fff;
+}
+
+.gears-alert.gears-alert-success{
+    border-color: #4CAF50;
+    background: #8BC34A;
+    color: #fff;
+}
+
+/**
+ * Gears Button
+ */
+.gears-button-element {
+    display: inline-block;
+}
+.gears-button {
+    border-radius: 4px;
+    padding: 7.5px 20px;
+    display: inline-block;
+    background: #eee;
+    color: #444;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.gears-button:hover {
+    color: #444;
+    opacity: 0.85;
+}
+
+.gears-button.transparent {
+    border-color: #444;
+    border: 2px solid;
+    background: transparent;
+}
+
+.gears-button-md {
+    padding: 10.5px 20px;
+}
+
+.gears-button-lg {
+    padding: 13.5px 30px;
+}
