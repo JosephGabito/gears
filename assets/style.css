@@ -522,28 +522,30 @@ left: 140px;
 /**
  * Gears Dropcap
  */
-.gears-dropcap-element-wrap {
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-
-.gears-dropcap-element-wrap p::first-letter {
-    font-size: 250%;
+span.gears-dropcap-letter {
+font-size: 44px;
     color: #444;
     font-weight: bold;
-    line-height: 1px;
+    position: relative;
+    margin-top: -1px;
+    float: left;
+    line-height: 44px;
+    margin-right: 7px;
 }
-
-.gears-dropcap-element-wrap.circular p::first-letter {
-    font-size: 125%;
-    color: #ffffff;
+span.gears-dropcap-letter.circular {
+    font-size: 23px;
+    color: #fff;
     font-weight: bold;
-    line-height: 1px;
+    position: relative;
+    top: 5px;
     background: #444;
     text-align: center;
     border-radius: 50%;
-    display: block;
-    padding: 5px 11px;
-    margin-right: 2.5px;
-    margin-bottom: 15px;
+    float: left;
+    margin-top: 0px;
+    height: 35px;
+    width: 35px;
+    line-height: 1px;
+    padding-top: 17px;
+    margin-right: 8px;
 }
