@@ -12,8 +12,8 @@ extract(
 		<p>
 			<?php echo esc_html( $text ); ?>
 		</p>
+		<div class="gears-alert-close">&times;</div>
 	</div>
-	<div class="gears-alert-close">&times;</div>
 </div>
 
 
