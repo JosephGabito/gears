@@ -38,6 +38,7 @@ class Gears_Shortcodes{
 				'gears_row' => 'gears_row',
 				'gears_column' => 'gears_column',
 				'gears_recent_posts' => 'gears_recent_posts',
+				'gears_dropcap' => 'gears_dropcap',
 			);
 		
 		// Counter Shortcode
@@ -245,9 +246,18 @@ class Gears_Shortcodes{
 	}
 
 	/**
+	 * Gears Dropcap
+	 */
+	function gears_dropcap( $atts, $content = "" ) {
+
+		return $this->get_template_file( $atts, 'dropcaps.php', $content );
+
+	}
+
+	/**
 	 * Gears Template File Loader Method
 	 */
-	function get_template_file($atts, $file = '') {
+	function get_template_file( $atts, $file = '', $content = null ) {
 
 		ob_start();
 
