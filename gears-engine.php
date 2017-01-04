@@ -62,15 +62,22 @@ if ( ! class_exists( 'Gears' ) )
 			$google_connect_module = apply_filters( 'gears_is_g+_enabled', '__return_true', 10, 1);
 			// Testimonial Module
 			$testimonial_module = apply_filters( 'gears_testimonial_enabled', '__return_false', 10, 1 );
+			// Portfolio Module
+			$portfolio_module = apply_filters( 'gears_portfolio_enabled', '__return_false', 10, 1 );
 
 			// load bp cover photo
 			if ( $coverphoto_module ) {
 				require_once GEARS_APP_PATH . '/modules/bp-cover-photo/index.php';
 			}
 
-			// load bp cover photo
+			// load Gears Testimonial
 			if ( true === $testimonial_module ) {
 				require_once GEARS_APP_PATH . '/modules/testimonials/testimonials.php';
+			}
+
+			// load Gears Portfolio
+			if ( true === $portfolio_module ) {
+				require_once GEARS_APP_PATH . '/modules/portfolio/portfolio.php';
 			}
 
 			if ( $google_connect_module ) {
