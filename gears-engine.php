@@ -88,6 +88,9 @@ if ( ! class_exists( 'Gears' ) )
 				}
 			}
 
+			// Load login form shortcode
+			require_once GEARS_APP_PATH . '/modules/login-form/login-form.php'; 
+
 			// load the shortcodes
 			require_once GEARS_APP_PATH . '/modules/shortcodes/library.php'; new Gears_Shortcodes();
 

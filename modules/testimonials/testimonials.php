@@ -65,8 +65,8 @@ class Gears_Testimonials {
 
         $atts = shortcode_atts(
             array(
-		        'foo' => 'no foo',
-		        'baz' => 'default baz'
+		        'param1' => '',
+		        'param2' => ''
 	        ), $atts, 'gears_testimonials'
         );
 

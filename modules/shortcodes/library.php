@@ -73,6 +73,7 @@ class Gears_Shortcodes{
 	function gears_recent_posts( $atts, $content )
 	{
 		$output = '';
+
 		return $this->get_template_file( $atts, 'recent-posts.php');
 	}
 	
@@ -81,33 +82,9 @@ class Gears_Shortcodes{
 	 */
 	function gears_login($atts, $content)
 	{
-
-		$args = array('echo' => false);
-		ob_start();
-		?>
-		<?php if ( ! is_user_logged_in() ) { ?>
-			
-		<div class="gears-login-wrap">
-			<div class="gears-login-links">
-				<ul>
-					<li class="current">
-						<?php _e('Sign in', 'gears'); ?>
-					</li>
-					<li>
-						<a href="<?php echo wp_registration_url(); ?>" title="<?php _e('Create New Account','gears'); ?>">
-							<?php _e('Create New Account', 'gears'); ?>
-						</a>
-					</li>
-				</ul>
-			</div>
-			<div class="gears-login well">
-				<?php echo wp_login_form($args); ?>
-			</div>
-		</div>
-		<?php } ?>
-		<?php
-		$output = ob_get_clean();
-		return $output;
+		
+		return $this->get_template_file( $atts, 'login.php');
+		
 	}
 
 	/**

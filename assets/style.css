@@ -549,3 +549,14 @@ span.gears-dropcap-letter.circular {
     padding-top: 17px;
     margin-right: 8px;
 }
+
+.hide {
+    display: none;
+}
+
+span.form-error {
+    width: 100%;
+    display: block;
+    margin: 5px 0;
+    color: #F44336;
+}
