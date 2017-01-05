@@ -10,6 +10,9 @@ if( null == $id ) {
 //$gears_portfolio = new Gears_Portfolio();
 
 $portfolio_classes = '';
+    if ( $style == 'masonry-grid' || $style == 'masonry-wide' ) {
+        $portfolio_classes = 'gears-masonry-portfolio';
+    }
 
 // Filter allowed columns.
 $allowed_columns = array( 1, 2, 3, 4, 5, 6 );
@@ -18,9 +21,9 @@ $allowed_columns = array( 1, 2, 3, 4, 5, 6 );
     }
 
 // Filter allowed style.
-$allowed_style = array( 'masonry-grid', 'grid', 'masonry-wide', 'wide' );
+$allowed_style = array( 'masonry-grid', 'grid', 'masonry-wide', 'wide', 'masonry-border', 'border', 'masonry-classic', 'classic', 'masonry-minimalist', 'minimalist', 'masonry-modern', 'modern' );
     if ( ! in_array( $style, $allowed_style ) ) {
-        $style = 'masonry-grid';
+        $style = 'classic';
     }
 
 // Filter allowed sort.
@@ -28,6 +31,10 @@ $allowed_sort = array( '', 'alphabetical', 'random' );
     if ( !in_array( $sort, $allowed_sort ) ) {
         $sort = '';
     }
+if ( $tile_layout == 'true' ) {
+    $class_tile_layout = 'tile';
+}
+
 
 $args = array(
         'post_type' => 'gears-portfolio',
@@ -45,8 +52,6 @@ $args = array(
         $args['order'] = 'ASC';
     }
 
-$portfolio_classes = 'gears-masonry-portfolio';
-
 $portfolio = new WP_Query( $args );
 
 ?>
@@ -57,40 +62,44 @@ $portfolio = new WP_Query( $args );
 
     <?php if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) { ?>
 
-        <div class="gears-porfolio-filters-wrapper">
+        <?php if ( $style == 'masonry-grid' || $style == 'masonry-wide' || $style == 'masonry-border' || $style == 'masonry-classic' || $style == 'masonry-minimalist' || $style == 'masonry-modern' ) { ?>
 
-            <div class="gears-porfolio-filters-inner-wrap">
+            <div class="gears-porfolio-filters-wrapper">
 
-                <ul id="filters-<?php echo esc_attr( $id ); ?>" class="gears-porfolio-filters">
+                <div class="gears-porfolio-filters-inner-wrap">
 
-                    <li>
-
-                        <a href="#" data-filter="*" class="active"><?php echo __( 'All', 'gears' ); ?></a>
-
-                    </li>
-
-                    <?php foreach ( $terms as $term ) { ?>
+                    <ul id="filters-<?php echo esc_attr( $id ); ?>" class="gears-porfolio-filters">
 
                         <li>
 
-                            <a href="#" data-filter=".<?php echo esc_html( $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a>
+                            <a href="#" data-filter="*" class="active"><?php echo __( 'All', 'gears' ); ?></a>
 
                         </li>
 
-                    <?php } ?>
+                        <?php foreach ( $terms as $term ) { ?>
 
-                </ul>
+                            <li>
+
+                                <a href="#" data-filter=".<?php echo esc_html( $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a>
+
+                            </li>
+
+                        <?php } ?>
+
+                    </ul>
+
+                </div>
 
             </div>
 
-        </div>
+        <?php } ?>
 
     <?php } ?>
 
     <div class="gears-portfolio gears-portfolio-<?php echo intval( $columns ); ?>-column style-<?php echo esc_attr( $style ); ?> gears-shortcode-element gears-clearfix">
 
         <?php
-            if ( $style == 'masonry-grid' || $style == 'masonry-wide' ) {
+            if ( $style == 'masonry-grid' || $style == 'masonry-wide' || $style == 'masonry-border' || $style == 'masonry-classic' || $style == 'masonry-minimalist' || $style == 'masonry-modern' ) {
 
                 $masonry_id = 'masonry-' . $id;
 
@@ -100,7 +109,8 @@ $portfolio = new WP_Query( $args );
 
             }
         ?>
-        <ul id="<?php echo esc_attr( $masonry_id ); ?>" data-items="<?php echo intval( $columns ); ?>" class="gears-portfolio-wrapper <?php echo esc_attr( $portfolio_classes ); ?>">
+
+        <ul id="<?php echo esc_attr( $masonry_id ); ?>" data-items="<?php echo intval( $columns ); ?>" class="gears-portfolio-wrapper <?php echo esc_attr( $portfolio_classes ); ?> <?php echo esc_attr( $class_tile_layout ); ?>">
 
             <?php while ( $portfolio->have_posts() ): ?>
 
@@ -119,7 +129,7 @@ $portfolio = new WP_Query( $args );
                             <?php if ( has_post_thumbnail() ) { ?>
 
                                 <?php
-                                    if ( $style == 'masonry-grid' || $style == 'masonry-wide' ) {
+                                    if ( $style == 'masonry-grid' || $style == 'masonry-wide' || $style == 'masonry-border' || $style == 'masonry-classic' || $style == 'masonry-minimalist' || $style == 'masonry-modern' ) {
 
                                         if ( $tile_layout == 'true' ) {
 

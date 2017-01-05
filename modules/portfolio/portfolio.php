@@ -157,11 +157,11 @@ class Gears_Portfolio {
             array(
                 'id' => '',
                 'columns' => 5, //Select: 1,2,3,4,5: The number of columns(items) to show.
-                'style' => 'masonry-grid', //Select: masonry, grid, carousel.
+                'style' => 'classic', //Select: masonry, grid, carousel.
                 'posts_per_page' => 0, //Any numbers: Default '0' to display number of page base on the user reading settings.
                 'sort' => '',  //Select: default(''), alphabetical, random.
-                'show_category' => true,
-                'tile_layout' => false
+                'show_category' => 'true',
+                'tile_layout' => 'true',
 	        ), $atts, 'gears_portfolio'
         );
 
