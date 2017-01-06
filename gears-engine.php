@@ -74,9 +74,9 @@ if ( ! class_exists( 'Gears' ) )
 			}
 
 			if ( $google_connect_module ) {
-
 				// load google plus connect
 				require_once GEARS_APP_PATH . '/modules/google-login/index.php';
+				
 				// Google+ Connect
 				if ( ! is_user_logged_in() && get_option( 'users_can_register' ) ) {
 
@@ -93,7 +93,6 @@ if ( ! class_exists( 'Gears' ) )
 
 			// load the shortcodes
 			require_once GEARS_APP_PATH . '/modules/shortcodes/library.php'; new Gears_Shortcodes();
-
 
 			if( ! is_user_logged_in() && $facebook_connect_module && get_option('users_can_register') ) {
 
