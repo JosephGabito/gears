@@ -1,6 +1,9 @@
 <?php
 /**
  * Gears Portfolio Module
+ *
+ * @package Gears
+ * @version  4.1.1
  * @since 4.1.1
  */
 
@@ -18,6 +21,8 @@ class Gears_Portfolio {
 
         $this->gears_get_portfolio_category();
 
+        add_action( 'wp_enqueue_scripts', array( $this, 'gears_portfolio_enqueue_style' ) );
+
         add_image_size( 'gears-portfolio-thumbnail', 550, 550, true );
 
         add_shortcode( 'gears_portfolio', array( $this, 'register_shortcode' ) );
@@ -31,7 +36,7 @@ class Gears_Portfolio {
          * Register a Testimonial post type.
          */
     	$labels = array(
-    		'name'               => __( 'Portfolio', 'Portfolio', 'gears' ),
+    		'name'               => __( 'Portfolios', 'Portfolio', 'gears' ),
     		'singular_name'      => __( 'Portfolio', 'Portfolio', 'gears' ),
     		'menu_name'          => __( 'Porfolios', 'admin menu', 'gears' ),
     		'name_admin_bar'     => __( 'Portfolio', 'add new on admin bar', 'gears' ),
@@ -186,6 +191,21 @@ class Gears_Portfolio {
     	return ob_get_clean();
 
     }
+
+    function gears_portfolio_enqueue_style() {
+
+        global $post;
+
+        if ( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, 'gears_portfolio') ) {
+
+            wp_enqueue_style( 'gears-portfolio-stylesheet', plugins_url( 'assets/gears-portfolio.css', dirname(dirname(__FILE__) ) ), array(), 1 );
+
+        }
+
+        return $this;
+
+    }
+
 
     public function gears_get_portfolio_category() {
 
