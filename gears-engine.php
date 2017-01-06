@@ -84,6 +84,8 @@ if ( ! class_exists( 'Gears' ) )
 
 						$google_connect = new GearsGooglePlusConnect();
 
+					} else {
+						add_action( 'gears_login_form', array( $this, 'curl_not_installed' ) );
 					}
 				}
 			}
@@ -115,6 +117,8 @@ if ( ! class_exists( 'Gears' ) )
 							$registrant_settings,
 							$button_label
 						);
+				} else {
+					add_action( 'gears_login_form', array( $this, 'curl_not_installed' ) );
 				}
 
 			}
@@ -124,6 +128,13 @@ if ( ! class_exists( 'Gears' ) )
 
 		}
 
+		public function curl_not_installed() {
+			?>
+			<div class="gears-alert gears-alert-danger gears-clearfix">
+				<?php esc_html_e( 'PHP Curl Extention must be enabled for Social Connect to work properly', 'gears'); ?>
+			</div>
+			<?php
+		}
 		/**
 		 * admin styling
 		 */
