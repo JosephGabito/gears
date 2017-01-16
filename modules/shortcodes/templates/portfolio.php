@@ -81,7 +81,7 @@ if ( 'alphabetical' === $sort ) {
 
 $portfolio = new WP_Query( $args );
 
-$filtered_style = apply_filters( 'filtered_array', array(
+$filtered_style = apply_filters( 'gears_portfolio_filtered_style', array(
 	'masonry-grid',
 	'masonry-wide',
 	'masonry-border',
