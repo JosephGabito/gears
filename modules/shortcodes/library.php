@@ -39,8 +39,10 @@ class Gears_Shortcodes{
 				'gears_column' => 'gears_column',
 				'gears_recent_posts' => 'gears_recent_posts',
 				'gears_dropcap' => 'gears_dropcap',
+				'gears_testimonials' => 'gears_testimonials',
+				'gears_portfolio' => 'gears_portfolio'
 			);
-		
+
 		// Counter Shortcode
 		$counter_shortcode = apply_filters( 'gears_counters_enabled', '__return_false', 10, 1 );
 
@@ -76,15 +78,15 @@ class Gears_Shortcodes{
 
 		return $this->get_template_file( $atts, 'recent-posts.php');
 	}
-	
+
 	/**
 	 * Login Shortcode
 	 */
 	function gears_login($atts, $content)
 	{
-		
+
 		return $this->get_template_file( $atts, 'login.php');
-		
+
 	}
 
 	/**
@@ -185,7 +187,7 @@ class Gears_Shortcodes{
 	 * Shows activity stream
 	 */
 	function gears_activity_stream( $atts ) {
-		
+
 		return $this->get_template_file( $atts, 'bp-site-wide-activity.php' );
 
 	}
@@ -223,11 +225,20 @@ class Gears_Shortcodes{
 	}
 
 	/**
-	 * Gears Dropcap
+	 * Gears Testimonials
 	 */
-	function gears_dropcap( $atts, $content = "" ) {
+	function gears_testimonials( $atts, $content = "" ) {
 
-		return $this->get_template_file( $atts, 'dropcaps.php', $content );
+		return $this->get_template_file( $atts, 'testimonials.php', $content );
+
+	}
+
+	/**
+	 * Gears Portfolio
+	 */
+	function gears_portfolio( $atts, $content = "" ) {
+
+		return $this->get_template_file( $atts, 'portfolio.php', $content );
 
 	}
 
@@ -250,7 +261,7 @@ class Gears_Shortcodes{
 
 	        	$template = $theme_template;
 
-	    	} 
+	    	}
 
 	    	include $template;
 
@@ -293,5 +304,13 @@ class Gears_Shortcodes{
 		$vc_modules->load( 'gears_pricing_table' );
 		// activity stream
 		$vc_modules->load( 'gears_bp_activity_stream' );
+		// login
+		$vc_modules->load( 'gears_login' );
+		// recent post
+		$vc_modules->load( 'gears_recent_posts' );
+		// testimonials
+		$vc_modules->load( 'gears_testimonials' );
+		// portfolio
+		$vc_modules->load( 'gears_portfolio' );
 	 }
 }
