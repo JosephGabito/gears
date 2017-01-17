@@ -56,7 +56,7 @@ class Gears_Portfolio {
 
 		$args = array(
 		'labels'             => $labels,
-			'description'        => __( 'Description.', 'gears' ),
+		'description'        => __( 'Description.', 'gears' ),
 		'public'             => true,
 		'publicly_queryable' => true,
 		'show_ui'            => true,

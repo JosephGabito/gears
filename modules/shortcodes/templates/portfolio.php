@@ -170,18 +170,7 @@ $filtered_style = apply_filters( 'gears_portfolio_filtered_style', array(
 
 								<?php
 
-								$size = 'gears-portfolio-thumbnail';
-
-								if ( in_array( $style, $filtered_style, true ) ) {
-
-									if ( 'true' === $tile_layout ) {
-										$size = 'large';
-									} else {
-										$size = 'gears-portfolio-thumbnail';
-									}
-								}
-
-								the_post_thumbnail( $size );
+								the_post_thumbnail( 'gears-portfolio-thumbnail' );
 
 								?>
 

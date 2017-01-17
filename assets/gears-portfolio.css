@@ -1,6 +1,8 @@
 /**
  * Gears Portfolio
  */
+ul.gears-portfolio-wrapper{
+}
 div.gears-portfolio ul {
     width: 100%;
     height: auto;
@@ -315,8 +317,7 @@ div.gears-portfolio.style-border > ul > li .gears-portfolio-thumbnail-overlay {
 /* Classic Style */
 .gears-portfolio.style-masonry-classic > ul > li,
 .gears-portfolio.style-classic > ul > li {
-    margin-bottom: 1%;
-    margin-right: 1%;
+    margin: 0.65%;
     overflow: hidden;
 }
 div.gears-portfolio.style-masonry-classic > ul > li .gears-portfolio-thumbnail-overlay,
@@ -602,7 +603,7 @@ div.gears-portfolio.style-classic > ul > li:hover .gears-portfolio-thumbnail-ove
 }
 .gears-portfolio.style-masonry-modern > ul.tile > li .gears-portfolio-details-title,
 .gears-portfolio.style-modern > ul.tile > li .gears-portfolio-details-title {
-    padding-top: 15%;
+    padding-top: 45%;
 }
 .gears-portfolio.style-masonry-modern > ul > li h5,
 .gears-portfolio.style-modern > ul > li h5,
@@ -663,7 +664,7 @@ div.gears-portfolio.style-classic > ul > li:hover .gears-portfolio-thumbnail-ove
 .style-masonry-minimalist.gears-portfolio-2-column > ul > li,
 .style-masonry-classic.gears-portfolio-2-column > ul > li,
 .style-masonry-border.gears-portfolio-2-column > ul > li {
-    width: 18.999%;
+    width: 48.50%;
 }
 .style-modern.gears-portfolio-2-column > ul > li,
 .style-minimalist.gears-portfolio-2-column > ul > li,
@@ -681,7 +682,7 @@ div.gears-portfolio.style-classic > ul > li:hover .gears-portfolio-thumbnail-ove
 .style-minimalist.gears-portfolio-3-column > ul > li,
 .style-classic.gears-portfolio-3-column > ul > li,
 .style-border.gears-portfolio-3-column > ul > li {
-    width: 32.65%;
+    width: 32%;
 }
 .style-masonry-modern.gears-portfolio-4-column > ul > li,
 .style-masonry-minimalist.gears-portfolio-4-column > ul > li,
@@ -717,60 +718,7 @@ div.gears-portfolio.style-classic > ul > li:hover .gears-portfolio-thumbnail-ove
 .style-masonry-minimalist.gears-portfolio-6-column > ul > li,
 .style-masonry-classic.gears-portfolio-6-column > ul > li,
 .style-masonry-border.gears-portfolio-6-column > ul > li {
-    width: 15.68%;
-}
-.style-masonry-modern.gears-portfolio-1-column > ul > li:nth-child(1n),
-.style-modern.gears-portfolio-1-column > ul > li:nth-child(1n),
-.style-masonry-modern.gears-portfolio-2-column > ul > li:nth-child(2n),
-.style-modern.gears-portfolio-2-column > ul > li:nth-child(2n),
-.style-masonry-modern.gears-portfolio-3-column > ul > li:nth-child(3n),
-.style-modern.gears-portfolio-3-column > ul > li:nth-child(3n),
-.style-masonry-modern.gears-portfolio-4-column > ul > li:nth-child(4n),
-.style-modern.gears-portfolio-4-column > ul > li:nth-child(4n),
-.style-masonry-modern.gears-portfolio-5-column > ul > li:nth-child(5n),
-.style-modern.gears-portfolio-5-column > ul > li:nth-child(5n),
-.style-masonry-modern.gears-portfolio-6-column > ul > li:nth-child(6n),
-.style-modern.gears-portfolio-6-column > ul > li:nth-child(6n),
-
-.style-masonry-minimalist.gears-portfolio-1-column > ul > li:nth-child(1n),
-.style-minimalist.gears-portfolio-1-column > ul > li:nth-child(1n),
-.style-masonry-minimalist.gears-portfolio-2-column > ul > li:nth-child(2n),
-.style-minimalist.gears-portfolio-2-column > ul > li:nth-child(2n),
-.style-masonry-minimalist.gears-portfolio-3-column > ul > li:nth-child(3n),
-.style-minimalist.gears-portfolio-3-column > ul > li:nth-child(3n),
-.style-masonry-minimalist.gears-portfolio-4-column > ul > li:nth-child(4n),
-.style-minimalist.gears-portfolio-4-column > ul > li:nth-child(4n),
-.style-masonry-minimalist.gears-portfolio-5-column > ul > li:nth-child(5n),
-.style-minimalist.gears-portfolio-5-column > ul > li:nth-child(5n),
-.style-masonry-minimalist.gears-portfolio-6-column > ul > li:nth-child(6n),
-.style-minimalist.gears-portfolio-6-column > ul > li:nth-child(6n),
-
-.style-masonry-classic.gears-portfolio-1-column > ul > li:nth-child(1n),
-.style-classic.gears-portfolio-1-column > ul > li:nth-child(1n),
-.style-masonry-classic.gears-portfolio-2-column > ul > li:nth-child(2n),
-.style-classic.gears-portfolio-2-column > ul > li:nth-child(2n),
-.style-masonry-classic.gears-portfolio-3-column > ul > li:nth-child(3n),
-.style-classic.gears-portfolio-3-column > ul > li:nth-child(3n),
-.style-masonry-classic.gears-portfolio-4-column > ul > li:nth-child(4n),
-.style-classic.gears-portfolio-4-column > ul > li:nth-child(4n),
-.style-masonry-classic.gears-portfolio-5-column > ul > li:nth-child(5n),
-.style-classic.gears-portfolio-5-column > ul > li:nth-child(5n),
-.style-masonry-classic.gears-portfolio-6-column > ul > li:nth-child(6n),
-.style-classic.gears-portfolio-6-column > ul > li:nth-child(6n),
-
-.style-masonry-border.gears-portfolio-1-column > ul > li:nth-child(1n),
-.style-border.gears-portfolio-1-column > ul > li:nth-child(1n),
-.style-masonry-border.gears-portfolio-2-column > ul > li:nth-child(2n),
-.style-border.gears-portfolio-2-column > ul > li:nth-child(2n),
-.style-masonry-border.gears-portfolio-3-column > ul > li:nth-child(3n),
-.style-border.gears-portfolio-3-column > ul > li:nth-child(3n),
-.style-masonry-border.gears-portfolio-4-column > ul > li:nth-child(4n),
-.style-border.gears-portfolio-4-column > ul > li:nth-child(4n),
-.style-masonry-border.gears-portfolio-5-column > ul > li:nth-child(5n),
-.style-border.gears-portfolio-5-column > ul > li:nth-child(5n),
-.style-masonry-border.gears-portfolio-6-column > ul > li:nth-child(6n),
-.style-border.gears-portfolio-6-column > ul > li:nth-child(6n) {
-    margin-right: 0;
+    width: 15.58%;
 }
 
 /* Masonry Style */
