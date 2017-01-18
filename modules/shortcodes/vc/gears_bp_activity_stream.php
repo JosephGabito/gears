@@ -6,12 +6,12 @@
  */
 vc_map(
 	array(
-		"name" => __("Members Activity Stream"),
+		"name" => __("Activity Stream"),
 		"base" => "gears_bp_activity_stream",
 		"class" => "",
 		"admin_label" => true,
 		"category" => __('Gears'),
-		"icon" => plugins_url('../../../assets/images/gears-icon.png', __FILE__),
+		"icon" => plugins_url('../../../assets/images/activity-stream.png', __FILE__),
 		'admin_enqueue_js' => array(),
 		'admin_enqueue_css' => array(),
 		"params" => array(
