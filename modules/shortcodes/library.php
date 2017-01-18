@@ -38,7 +38,7 @@ class Gears_Shortcodes{
 				'gears_row' => 'gears_row',
 				'gears_column' => 'gears_column',
 				'gears_recent_posts' => 'gears_recent_posts',
-				'gears_dropcap' => 'gears_dropcap',
+				'gears_dropcap' => 'gears_dropcap'
 			);
 		
 		// Counter Shortcode
@@ -293,5 +293,13 @@ class Gears_Shortcodes{
 		$vc_modules->load( 'gears_pricing_table' );
 		// activity stream
 		$vc_modules->load( 'gears_bp_activity_stream' );
+		// login
+		$vc_modules->load( 'gears_login' );
+		// recent post
+		$vc_modules->load( 'gears_recent_posts' );
+		// testimonials
+		$vc_modules->load( 'gears_testimonials' );
+		// portfolio
+		$vc_modules->load( 'gears_portfolio' );
 	 }
 }
