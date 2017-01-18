@@ -14,7 +14,7 @@ vc_map(
 		"admin_label" => true,
 		"icon" => "test",
 		"category" => __('Gears'),
-		"icon" => plugins_url('../../../assets/images/gears-icon.png', __FILE__),
+		"icon" => plugins_url('../../../assets/images/pricing.png', __FILE__),
 		'admin_enqueue_js' => array(),
 		'admin_enqueue_css' => array(),
 		"params" => array(
