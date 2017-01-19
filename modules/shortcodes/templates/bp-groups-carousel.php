@@ -34,6 +34,8 @@ if ( function_exists( 'bp_has_groups' ) ) {
 			data-max-slides="<?php echo esc_attr( $max_slides ); ?>"
 			data-min-slides="<?php echo esc_attr( $min_slides ); ?>" 
 			data-item-width="<?php echo esc_attr( $item_width ); ?>"
+			data-slide-margin="<?php echo esc_attr( absint( $slide_margin ) ); ?>"
+			
 			class="gears-carousel-standard bp-groups-carousel">
 
 				<?php while ( bp_groups() ) { ?>

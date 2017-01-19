@@ -1,28 +1,37 @@
 <?php
+$default_columns = "3-columns"; // 3 columns
 
-$output = '';
-		
-$default_columns = 3; // 4 columns
-
-$allowed_columns = array(2, 3, 4, 6);
+$allowed_columns = array(
+		'2-columns',
+		'3-columns',
+		'4-columns',
+		'6-columns'
+	);
 
 extract(
 	shortcode_atts( array(
-		'type' => '',
+		'type' => 'active',
 		'max_item' => 10,
-		'columns' => $default_columns // allowed 2, 3, 4, 6
+		'columns' => $default_columns
 	), $atts )
 );
 
-$columns = floor( 12 / $columns );
+$assigned_columns = array(
+		'2-columns' => 6,
+		'3-columns' => 4,
+		'4-columns' => 3,
+		'6-columns' => 2
+	);
 
 
-// catch invalid columns
-if ( ! in_array( $columns, $allowed_columns ) ) {
+$columns = absint( $assigned_columns[ $columns ] );
+
+// Ensure that columns is scalable.
+if ( !in_array( $columns, $allowed_columns ) ) {
+	// default to default columns settings, just in case
 	$columns = $default_columns;
 }
 
-// available columns are  2, 3, 4, and 6
 $columns_classes = sprintf( ' col-md-%d col-sm-%d col-xs-6', $columns, $columns );
 
 $params = array(
@@ -33,7 +42,9 @@ $params = array(
 if ( function_exists( 'bp_has_members' ) ) {
 
 	if ( bp_has_members( $params ) ) { ?>
-		
+	
+	<div class="gears-clearfix gears-shortcode-element bp-members-grid">
+
 		<ul class="ul-bp-members-grid">
 			<?php
 			while( bp_members() ) {
@@ -87,7 +98,9 @@ if ( function_exists( 'bp_has_members' ) ) {
 			<?php } ?>
 
 		</ul>
-
+	
+	</div><!--.gears-shortcode-element-->
+	<div class="gears-clearfix"></div>
 	<?php } ?>
 	
 

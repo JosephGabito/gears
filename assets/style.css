@@ -270,6 +270,7 @@ left: 140px;
     border-radius: 0;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
+    width: 100%;
 }
 
 .ul-bp-members-grid .members-name {
@@ -335,6 +336,11 @@ left: 140px;
     transform: translateY(-40px);
 }
 
+.gears-bp-groups-grid li.bp-groups-grid-item img.avatar {
+    width: 100%;
+    height: auto;
+}
+
 .gears-bp-groups-grid .groups-count {
     display: block;
     font-style: italic;
@@ -345,6 +351,11 @@ left: 140px;
 .bp-members-carousel {
     height: 0;
 }
+
+.bp-members-carousel img.avatar {
+    border-radius: 4px;
+}
+
 .bp-members-carousel .members-name {
     padding: 10%;
     display: block;
@@ -392,6 +403,10 @@ left: 140px;
     visibility: visible;
     opacity: 1;
     transform: translateY(-40px);
+}
+
+.bp-groups-carousel li.carousel-item img.avatar {
+    border-radius: 4px;
 }
 
 .bp-groups-carousel .groups-count {
@@ -559,4 +574,40 @@ span.form-error {
     display: block;
     margin: 5px 0;
     color: #F44336;
+}
+
+/**
+ * BP Groups List
+ */
+ul.bp-groups-list {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+ul.bp-groups-list li {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+ul.bp-groups-list img {
+    border-radius: 0;
+}
+
+ul.bp-groups-list .group-item {
+    display: table;
+}
+ul.bp-groups-list .group-avatar,
+ul.bp-groups-list .group-details {
+    display: table-cell;
+}
+
+ul.bp-groups-list .group-avatar {
+    width: 20%;
+    padding-right: 10px;
+    vertical-align: middle;
+
+}
+ul.bp-groups-list .group-details {
+    width: 80%;
+    vertical-align: middle;
 }

@@ -1,7 +1,12 @@
 <?php
-$default_columns = 3; //four columns
+$default_columns = '3-columns'; // 3 Columns.
 		
-$allowed_columns = array(2, 3, 4, 6);
+$allowed_columns = array(
+		'2-columns',
+		'3-columns',
+		'4-columns',
+		'6-columns'
+	);
 
 extract(
 	shortcode_atts( array(
@@ -11,9 +16,16 @@ extract(
 	), $atts )
 );
 
-$columns = floor(12/$columns);
+$assigned_columns = array(
+		'2-columns' => 6,
+		'3-columns' => 4,
+		'4-columns' => 3,
+		'6-columns' => 2
+	);
 
-// ensure that columns is scalable
+$columns = absint( $assigned_columns[ $columns ] );
+
+// Ensure that columns is scalable.
 if ( !in_array( $columns, $allowed_columns ) ) {
 	// default to default columns settings, just in case
 	$columns = $default_columns;

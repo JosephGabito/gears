@@ -14,8 +14,11 @@ class Gears_Shortcodes{
 
 		// configure default message for not complete bp installation
 		$not_installed_tpl = '<div class="alert alert-warning">%s</div>';
+		
 		$not_installed_message = __('Sorry, BuddyPress must be enabled for this shortcode to work properly. If you have already installed and activated BuddyPress plugin, please make sure to enable this component inside "Settings" &rarr; "BuddyPress" &rarr; "Components".', 'gears');
-		$not_installed_message = sprintf($not_installed_tpl, $not_installed_message);
+
+		$not_installed_message = sprintf( $not_installed_tpl, $not_installed_message );
+
 		$this->bp_not_installed = $not_installed_message;
 
 		// if visual composer is present integrate our modules to it
@@ -65,7 +68,9 @@ class Gears_Shortcodes{
 		}
 		// register all the shortcodes
 		foreach ( $shortcode_list as $shortcode_id => $shortcode_callback ) {
+
 			add_shortcode( $shortcode_id, array( $this, $shortcode_callback ) );
+
 		}
 
 		return $this;
@@ -92,6 +97,7 @@ class Gears_Shortcodes{
 	 * Adds row to content
 	 */
 	function gears_row($atts, $content){
+		
 		// remove all annoying <br> and p
 		$content = (do_shortcode($content));
 		$content = str_replace("<br />", "\n", $content);

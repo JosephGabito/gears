@@ -56,26 +56,31 @@ if ( ! class_exists( 'Gears' ) )
 
 			// Cover Photo Module
 			$coverphoto_module = apply_filters('gears_cover_photo', '__return_true', 10, 1);
+			
 			// Facebook Connect Module
-			$facebook_connect_module = apply_filters( 'gears_is_fb_enabled', $this->ot_theme_option( 'is_fb_enabled' ) );
+			$facebook_connect_module = apply_filters( 'gears_is_fb_enabled', 
+				$this->ot_theme_option( 'is_fb_enabled' ) );
+			
 			// Google Connect Module
 			$google_connect_module = apply_filters( 'gears_is_g+_enabled', '__return_true', 10, 1);
+			
 			// Testimonial Module
 			$testimonial_module = apply_filters( 'gears_testimonial_enabled', '__return_false', 10, 1 );
+			
 			// Portfolio Module
 			$portfolio_module = apply_filters( 'gears_portfolio_enabled', '__return_false', 10, 1 );
 
-			// load bp cover photo
+			// Load bp cover photo
 			if ( $coverphoto_module ) {
 				require_once GEARS_APP_PATH . '/modules/bp-cover-photo/index.php';
 			}
 
-			// load bp cover photo
+			// Load bp cover photo
 			if ( true === $testimonial_module ) {
 				require_once GEARS_APP_PATH . '/modules/testimonials/testimonials.php';
 			}
 
-			// load Gears Portfolio
+			// Load Gears Portfolio
 			if ( true === $portfolio_module ) {
 				require_once GEARS_APP_PATH . '/modules/portfolio/portfolio.php';
 			}
@@ -114,8 +119,11 @@ if ( ! class_exists( 'Gears' ) )
 					require_once GEARS_APP_PATH . '/modules/facebook-login/index.php';
 
 					$app_id = apply_filters( 'gears_fb_app_id', $this->ot_theme_option( 'application_id', '' ) );
+					
 					$app_secret = apply_filters( 'gears_fb_app_secret', $this->ot_theme_option( 'application_secret', '' ) );
+
 					$registrant_settings = apply_filters( 'gears_register_settings', $this->ot_theme_option( 'registrant_setting', 'not_unique' ) );
+
 					$button_label = apply_filters ( 'gears_button_label', $this->ot_theme_option( 'gears_fb_btn_label' , __('Connect w/ Facebook','gears') ) );
 
 					new GearsModulesFacebookLogin(
@@ -124,8 +132,11 @@ if ( ! class_exists( 'Gears' ) )
 							$registrant_settings,
 							$button_label
 						);
+
 				} else {
+
 					add_action( 'gears_login_form', array( $this, 'curl_not_installed' ) );
+					
 				}
 
 			}
