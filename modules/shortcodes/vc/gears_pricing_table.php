@@ -35,9 +35,32 @@ vc_map(
 					"admin_label" => true,
 					"heading" => __("Price Label", "gears"),
 					"param_name" => "price_label",
-					"value" => '$0.00',
+					"value" => '0.00',
 					"description" => __("The pricing of this services/products offered. Example '$10.00/Month'.", "gears")
 				),
+				// Currency.
+				array(
+					"type" => "textfield",
+					"holder" => "",
+					"class" => "",
+					"admin_label" => true,
+					"heading" => __("Price Currency", "gears"),
+					"param_name" => "price_currency",
+					"value" => '$',
+					"description" => __("The currency of the price. Example, '$'.", "gears")
+				),
+				// Pricing Type.
+				array(
+					"type" => "textfield",
+					"holder" => "",
+					"class" => "",
+					"admin_label" => true,
+					"heading" => __("Price Type Text", "gears"),
+					"param_name" => "payment_type_text",
+					"value" => __('Per Month', 'gears'),
+					"description" => __("For example: 'Per Month', 'Per Year', or 'Annually'.", "gears")
+				),
+				// Button Link.
 				array(
 					"type" => "textfield",
 					"holder" => "",
@@ -65,7 +88,7 @@ vc_map(
 					"admin_label" => true,
 					"heading" => __("Features/Services Offered", "gears"),
 					"param_name" => "features",
-					"value" => 'Service1, Service2, !Not Available Service',
+					"value" => 'Service1,Service2,!Not Available Service',
 					"description" => __("List all the services you offer in this product/item/services (separate it by a newline). Prepend '!' in text to indicate the feature which is not available. Example 'Free Swag, !24/7 Customer Support'", "gears")
 				),
 				array(

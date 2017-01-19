@@ -2,19 +2,27 @@
 extract(
 	shortcode_atts( array(
 		'title' => '',
-		'price_label' => '$0.00',
+		'price_label' => '0.00',
+		'price_currency' => '$',
+		'payment_type_text' => __( 'Per Month', 'flocks' ),
 		'features' => '',
-		'button_label' => 'Purchase',
+		'button_label' => __('Purchase', 'flocks'),
 		'button_link' => '#',
 		'popular' => 'false',
-		'color' => 'alizarin'
+		'color' => 'alizarin',
+		'test_param' => 'alizarin'
+		
 	), $atts )
 );
 
-if( !empty( $features ) ){
+if ( !empty( $features ) ) {
+	
 	$features = explode( ',', $features );
-}else{
+
+} else {
+
 	$features = array();
+
 }
 
 $output = '';
