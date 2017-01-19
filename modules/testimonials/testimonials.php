@@ -63,13 +63,6 @@ class Gears_Testimonials {
 
     public function register_shortcode( $atts ) {
 
-        $atts = shortcode_atts(
-            array(
-		        'param1' => '',
-		        'param2' => ''
-	        ), $atts, 'gears_testimonials'
-        );
-
         return $this->display( $atts );
 
     }
