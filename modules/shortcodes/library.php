@@ -21,6 +21,8 @@ class Gears_Shortcodes{
 
 		$this->bp_not_installed = $not_installed_message;
 
+		$this->register_scripts();
+
 		// if visual composer is present integrate our modules to it
 		if (function_exists('vc_map')) {
 			$this->vc_integration();
@@ -42,7 +44,8 @@ class Gears_Shortcodes{
 				'gears_column' => 'gears_column',
 				'gears_recent_posts' => 'gears_recent_posts',
 				'gears_dropcap' => 'gears_dropcap',
-				'gears_team_member' => 'gears_team_member'
+				'gears_team_member' => 'gears_team_member',
+				'gears_google_map' => 'gears_google_map'
 			);
 		
 		// Counter Shortcode
@@ -74,6 +77,38 @@ class Gears_Shortcodes{
 		}
 
 		return $this;
+	}
+
+	/**
+	 * Enqueue all the scripts here.
+	 * 
+	 * @return void
+	 */
+	function register_scripts() {
+
+		add_action( 'wp_enqueue_scripts', array( $this, 'gears_enqueue_shortcode_scripts' ) );
+
+		return;
+
+	}
+
+	/**
+	 * Active callback for method 'register_scripts' using 'wp_enqueue_scripts' action.
+	 * This is where we should register our scripts and styles.
+	 * 
+	 * @return void.
+	 */
+	function gears_enqueue_shortcode_scripts() {
+
+		// Google Map API Script
+		$google_map_api_key = apply_filters( 'gears-google-map-api', 'AIzaSyAKwuFxb4PLCdh8yf3v2XIbq000kAXSiaY' );
+		$google_map_handle = 'gears-google-map-src';
+		$google_map_src = sprintf( 'https://maps.googleapis.com/maps/api/js?key=%s', $google_map_api_key );
+
+		wp_register_script( $google_map_handle, $google_map_src, $deps = array('jquery') , $ver = 1.0, $in_footer = true );
+
+		return;
+
 	}
 
 	function gears_recent_posts( $atts, $content )
@@ -246,6 +281,14 @@ class Gears_Shortcodes{
 		return $this->get_template_file( $atts, 'gears-member.php', $content );
 	}
 
+	function gears_google_map( $atts, $content = null ) {
+
+		wp_enqueue_script('gears-google-map-src');
+
+		return $this->get_template_file( $atts, 'gears-google-map.php', $content );
+
+	}
+
 	/**
 	 * Gears Template File Loader Method
 	 */
@@ -318,5 +361,9 @@ class Gears_Shortcodes{
 		$vc_modules->load( 'gears_portfolio' );
 		// Team Member
 		$vc_modules->load( 'gears_team_member' );
+		// Google Map
+		$vc_modules->load( 'gears_google_maps' );
+		// Dropcap
+		$vc_modules->load( 'gears_counters' );
 	 }
 }
