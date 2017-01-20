@@ -24,23 +24,10 @@ vc_map(
 					"holder" => "",
 					"class" => "",
 					"admin_label" => true,
-					"heading" => __("Type", "gears"),
+					"heading" => __("Number of Post(s)", "gears"),
 					"param_name" => "posts_per_page",
-					"value" => 12,
-					"description" => __("Declare the number of members you want to display.", "gears")
-				),
-				array(
-					"type" => "dropdown",
-					"holder" => "",
-					"class" => "",
-					"admin_label" => true,
-					"heading" => __("Ignore Sticky Posts", "gears"),
-					"param_name" => "ignore_sticky_posts",
-                    "value" => array(
-							__('True', "gears") => 'true',
-							__('False', "gears") => 'false'
-						),
-					"description" => __("Do you want to ignore sticky posts.", "gears")
+					"value" => 3,
+					"description" => __("Enter the maximum number of post(s).", "gears")
 				)
 			)
 	)

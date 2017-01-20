@@ -1,13 +1,16 @@
 <?php
-$args = array(
-    'posts_per_page' => 3,
-    'ignore_sticky_posts' => 'true'
-);
-
 extract(
-    shortcode_atts( $args, $atts )
+    shortcode_atts( 
+        array(
+            'posts_per_page' => 3,
+        ), $atts 
+    )
 );
 
+$args = array(
+    'ignore_sticky_posts' => 'true',
+    'posts_per_page' => $posts_per_page
+);
 ?>
 
 <?php $gears_rp_query = new WP_Query( $args ); ?>
