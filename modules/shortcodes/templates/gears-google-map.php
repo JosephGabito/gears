@@ -99,8 +99,8 @@ jQuery(document).ready(function(){
 
 	     // Info Window.
 	    var info_template = "<div id='gears-gmap-info-title'><h2>"
-	    			+ info_title
-	    			+ "</h2><div id='gears-gmap-info-description'>"+info_description+"</div></div>";
+	    		+ info_title
+	    		+ "</h2><div id='gears-gmap-info-description'>"+info_description+"</div></div>";
 	    
 	    var infowindow = new google.maps.InfoWindow({
 	     	content: info_template
@@ -110,7 +110,7 @@ jQuery(document).ready(function(){
 	    var marker = new google.maps.Marker({
 	     	position: coords,
 	     	map: map,
-	     	icon: 'http://localhost/google-map/Marker.png',
+	     	icon: '<?php echo plugins_url();?>/gears/assets/images/marker.png',
 	     	title: map_marker_settings.info_window.title
 	    });
 
