@@ -32,25 +32,29 @@ $params = array(
 				<?php while (bp_groups()) { ?>
 					<?php bp_the_group(); ?>
 						<li class="clearfix bp-groups-list-item">
-							<?php 
-								$avatar_config = array(
-									'type' => 'full', 
-									'class' => 'avatar col-xs-3 col-sm-3 col-lg-3 col-md-3' 
-								); 
-							?>
-							<?php echo bp_get_group_avatar($avatar_config); ?>
-							<div class="col-xs-9 col-md-9 col-sm-9 col-xs-9">
-								<h5>
-									<a href="<?php echo esc_attr(bp_get_group_permalink()); ?>" title="<?php echo esc_attr(bp_get_group_name()); ?>">
-										<?php echo esc_attr( bp_get_group_name()); ?>
-									</a>
-								</h5>
-								<div class="meta small">
-									<span class="activity">
-										<?php echo bp_get_group_type() .'/'.  bp_get_group_member_count(); ?>
-									</span>
+							<div class="group-item">
+								<div class="group-avatar">
+								<?php 
+									$avatar_config = array(
+										'type' => 'full', 
+										'class' => 'avatar' 
+									); 
+								?>
+								<?php echo bp_get_group_avatar($avatar_config); ?>
 								</div>
-							</div>
+								<div class="group-details">
+									<h5>
+										<a href="<?php echo esc_attr(bp_get_group_permalink()); ?>" title="<?php echo esc_attr(bp_get_group_name()); ?>">
+											<?php echo esc_attr( bp_get_group_name()); ?>
+										</a>
+									</h5>
+									<div class="meta small">
+										<span class="activity">
+											<?php echo bp_get_group_type() .'/'.  bp_get_group_member_count(); ?>
+										</span>
+									</div>
+								</div>
+							</div><!--.group-item-->
 						</li>
 				<?php } ?>
 			</ul>

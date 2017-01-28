@@ -14,30 +14,37 @@ if (!class_exists('GearsGooglePlusConnect'))
 
 		public function __construct() 
 		{
-			// return if option tree is not defined
-			if (!function_exists('ot_get_option')) { return; };
+			// Return if option tree is not defined.
+			
+			$is_google_connect_enabled = apply_filters( 'gears_g+_api_enabled', $this->ot_theme_option('google_api_enabled', false) );
 
-			$is_google_connect_enabled = ot_get_option('google_api_enabled', false);
+			if ( ! $is_google_connect_enabled ) {
 
-			if (!$is_google_connect_enabled) 
-			{
 				return;
+
 			}
 
-			$this->clientId = ot_get_option('google_api_client_id', '');
-			$this->clientSecret = ot_get_option('google_api_client_secret', '');
-			$this->redirectUri = admin_url('admin-ajax.php?action=clientConnectionInit');
+			$this->clientId = apply_filters( 'gears_g+_app_id', $this->ot_theme_option( 'google_api_client_id', '' ) );
 
-			if (empty($this->clientId)) { return; }
-			if (empty($this->clientSecret)) { return; }
+			$this->clientSecret = apply_filters( 'gears_g+_app_secret', $this->ot_theme_option( 'google_api_client_secret', '' ) );
 
-			$this->buttonLabel = ot_get_option('google_api_button_label', $this->buttonLabel);
+			$this->redirectUri = apply_filters( 'gears_g+_redirect_url', admin_url( 'admin-ajax.php?action=clientConnectionInit' ) );
 
-			add_action('klein_login_form', array($this, 'connectClient') , 1);
-			add_action('gears_login_form', array($this, 'connectClient') , 1);
-			add_action('wp_ajax_clientConnectionInit', array($this, 'clientConnectionInit'));
-			add_action('wp_ajax_nopriv_clientConnectionInit', array($this, 'clientConnectionInit'));
-			add_action('login_head', array($this, 'errorLoggingIn'));
+			if ( empty( $this->clientId ) ) { return; }
+
+			if ( empty( $this->clientSecret ) ) { return; }
+
+			$this->buttonLabel = apply_filters( 'gears_g+_btn_label', $this->ot_theme_option( 'google_api_button_label', $this->buttonLabel ) );
+
+			add_action( 'klein_login_form', array( $this, 'connectClient' ) , 1 );
+ 
+			add_action( 'gears_login_form', array( $this, 'connectClient' ) , 1 );
+
+			add_action( 'wp_ajax_clientConnectionInit', array( $this, 'clientConnectionInit' ) );
+
+			add_action( 'wp_ajax_nopriv_clientConnectionInit', array( $this, 'clientConnectionInit' ) );
+
+			add_action( 'login_head', array( $this, 'errorLoggingIn' ) );
 
 			return;
 		}
@@ -57,6 +64,20 @@ if (!class_exists('GearsGooglePlusConnect'))
 					add_filter( 'login_message', array( $this, 'errorAuthentication' ) );
 				}
 			}
+		}
+
+		public function ot_theme_option( $option_id, $default = '' ){
+
+			// get the saved options
+			$options = get_option( 'option_tree' );
+
+			// look for the saved value
+			if ( isset( $options[$option_id] ) && '' != $options[$option_id] ) {
+				return $options[$option_id];
+			}
+
+			return $default;
+
 		}
 
 		public function errorAuthentication()
@@ -79,20 +100,24 @@ if (!class_exists('GearsGooglePlusConnect'))
 		 */
 		public function clientConnectionInit()
 		{
-			if (is_user_logged_in()) die();
+			if ( is_user_logged_in() ) die();
 
 			// autoload google api sources
 			require_once GEARS_APP_PATH . '/modules/google-login/autoload.php';
 
 			// unset everything on connect
 			if (isset($_SESSION)) {
+
 				unset($_SESSION);
+
 			}
 			
 			$client = new Google_Client();
 
 			$client->setClientId($this->clientId);
+			
 			$client->setClientSecret($this->clientSecret);
+
 			$client->setRedirectUri($this->redirectUri);
 
 			// add scope for fetching user email and profile
@@ -103,16 +128,22 @@ if (!class_exists('GearsGooglePlusConnect'))
 			$oauth2 = new Google_Service_Oauth2($client);
 
 			// catch reponse from google api
-			if (isset($_GET['code'])) {
+			if ( isset( $_GET['code'] ) ) {
 
 				// Authenticate the user, $_GET['code'] is used internally:
 				try {
+					
 					$client->authenticate($_GET['code']);
+				
 				} catch (Exception $e) {
+
 					// something bad happened here...
 					wp_safe_redirect(wp_login_url() . '?error=true&type=gp_error_authentication');
+
 					return;
 				}
+
+
 				// assign new access token to client
 				$this->accessToken = $client->getAccessToken();
 
@@ -120,42 +151,74 @@ if (!class_exists('GearsGooglePlusConnect'))
 				$user = $oauth2->userinfo->get();
 				// assign a dirty username for now
 				$username = $user->name;
+
+					// in case he is using Google Business Suite
+					if ( empty ( $username ) ) {
+
+						// assign the email as username.
+						$parts = explode( "@",  $user->email );
+						$username = $parts[0];
+					}
+
 				// generate random password for that user
 				$password = wp_generate_password(10, false, false);
+
 				// store the email
 				$email = $user->email;
 			
 				// check if email already exists
 				$user_email_id = email_exists($user->email);
 
-				if ($user_email_id) {
+				if ( $user_email_id ) {
+
 					// login the user if email is found
 					$user = get_user_by($field = 'id', $user_email_id);
 					if ($user) {
 					    wp_set_current_user($user_email_id, $user->user_login );
 					    wp_set_auth_cookie($user_email_id );
 					}
+
 				} else{
+
 					// otherwise, create new user
-					$username = $this->sanitizeUserName($username, 1, $copy = $username);
+					$username = $this->sanitizeUserName( $username, 1, $copy = $username );
+					
 					$user_id = wp_create_user( $username, $password, $email );
+
 					$last_created_user = get_user_by($field = 'id', $user_id);
-					if ($last_created_user) {
-					    wp_set_current_user($user_id, $last_created_user->user_login );
-					    wp_set_auth_cookie($user_id);
+					
+					if ( $last_created_user ) {
+
+					    wp_set_current_user( $user_id, $last_created_user->user_login );
+
+					    wp_set_auth_cookie( $user_id );
+
 					    // update user info
-					    wp_update_user(array('ID' => $user_id,
-										'display_name' => $user->name));
+					    wp_update_user(
+					    	array(
+					    			'ID' => $user_id,
+									'display_name' => $user->name 
+								)
+					    	);
+
 					    // update buddypress profile
-					    if (function_exists('xprofile_set_field_data')) {
-					    	 xprofile_set_field_data('Name', $user_id,  $user->name);
+					    if ( function_exists( 'xprofile_set_field_data' ) ) {
+					    	
+					    	xprofile_set_field_data( 'Name', $user_id,  $user->name );
+
 					    }
-					    if( function_exists( 'bp_loggedin_user_domain' ) ){
+
+					    if ( function_exists( 'bp_loggedin_user_domain' ) ) {
+
 							wp_safe_redirect( bp_core_get_user_domain( $user_id ) );
+
 							die();
-						}else{
+
+						} else {
+
 							// else just redirect to homepage
 							wp_safe_redirect( get_bloginfo( 'url' ) );
+							
 							die();
 						}
 					}

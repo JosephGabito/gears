@@ -14,7 +14,7 @@ vc_map(
 		"base" => "gears_bp_groups_list",
 		"class" => "",
 		"admin_label" => true,
-		"icon" => plugins_url('../../../assets/images/gears-icon.png', __FILE__),
+		"icon" => plugins_url('../../../assets/images/bp-groups-list.png', __FILE__),
 		"category" => __('Gears'),
 		'admin_enqueue_js' => array(),
 		'admin_enqueue_css' => array(),

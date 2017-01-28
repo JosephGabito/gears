@@ -1,6 +1,6 @@
 /**
  * Gears Stylesheet
- * @version 2.1
+ * @version 2.2
  * @package gears
  */
 
@@ -160,6 +160,11 @@ left: 140px;
     padding: 24px;
 }
 
+.gears-pricing-table-features-list-wrap {
+    margin: 0;
+    padding: 0;
+}
+
 .gears-pricing-table-title,
 .gears-pricing-table-price-label,
 .gears-pricing-table-btn
@@ -265,6 +270,7 @@ left: 140px;
     border-radius: 0;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
+    width: 100%;
 }
 
 .ul-bp-members-grid .members-name {
@@ -291,6 +297,10 @@ left: 140px;
 /**
  * 2. Groups Grid
  */
+.gears-bp-groups-grid {
+    padding: 0;
+    margin: 0;
+}
 .gears-bp-groups-grid li.bp-groups-grid-item {
     margin-bottom: 0;
     overflow: hidden;
@@ -326,6 +336,11 @@ left: 140px;
     transform: translateY(-40px);
 }
 
+.gears-bp-groups-grid li.bp-groups-grid-item img.avatar {
+    width: 100%;
+    height: auto;
+}
+
 .gears-bp-groups-grid .groups-count {
     display: block;
     font-style: italic;
@@ -336,6 +351,11 @@ left: 140px;
 .bp-members-carousel {
     height: 0;
 }
+
+.bp-members-carousel img.avatar {
+    border-radius: 4px;
+}
+
 .bp-members-carousel .members-name {
     padding: 10%;
     display: block;
@@ -385,7 +405,209 @@ left: 140px;
     transform: translateY(-40px);
 }
 
+.bp-groups-carousel li.carousel-item img.avatar {
+    border-radius: 4px;
+}
+
 .bp-groups-carousel .groups-count {
     display: block;
     font-style: italic;
+}
+
+.gears-shortcode-element {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.gears-clearfix {
+    clear: both;
+}
+
+/**
+ * Gears Counter
+ */
+.gears-counter {
+    text-align: center;
+    padding: 25px;
+    background: #eee;
+}
+
+.gears-counter.transparent {
+    background: transparent;
+    border: 2px solid #eee;
+}
+
+.gears-counter-symbol,
+.gears-counter-unit,
+.gears-counter-value {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+/**
+ * Gears Alert
+ */
+.gears-alert-element {
+    position: relative;
+}
+.gears-alert {
+    padding: 15px;
+    border-color: #444;
+    background: #eee;
+    border: 1px solid;
+    border-radius: 4px;
+
+}
+.gears-alert-close {
+    float: right;
+    position: absolute;
+    top: 6px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.gears-alert.gears-alert-info{
+    background: #03A9F4;
+    border-color: #2196F3;
+    color: #fff;
+}
+
+.gears-alert.gears-alert-info{
+    background: #03A9F4;
+    border-color: #2196F3;
+    color: #fff;
+}
+
+.gears-alert.gears-alert-warning{
+    border-color: #FFC107;
+    background: #FFEB3B;
+    color: #444;
+}
+
+.gears-alert.gears-alert-danger{
+    border-color: #FF5722;
+    background: #FF9800;
+    color: #fff;
+}
+
+.gears-alert.gears-alert-success{
+    border-color: #4CAF50;
+    background: #8BC34A;
+    color: #fff;
+}
+
+/**
+ * Gears Button
+ */
+.gears-button-element {
+    display: inline-block;
+}
+.gears-button {
+    border-radius: 4px;
+    padding: 7.5px 20px;
+    display: inline-block;
+    background: #eee;
+    color: #444;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.gears-button:hover {
+    color: #444;
+    opacity: 0.85;
+}
+
+.gears-button.transparent {
+    border-color: #444;
+    border: 2px solid;
+    background: transparent;
+}
+
+.gears-button-md {
+    padding: 10.5px 20px;
+}
+
+.gears-button-lg {
+    padding: 13.5px 30px;
+}
+
+/**
+ * Gears Dropcap
+ */
+span.gears-dropcap-letter {
+font-size: 44px;
+    color: #444;
+    font-weight: bold;
+    position: relative;
+    margin-top: -1px;
+    float: left;
+    line-height: 44px;
+    margin-right: 7px;
+}
+span.gears-dropcap-letter.circular {
+    font-size: 23px;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+    top: 5px;
+    background: #444;
+    text-align: center;
+    border-radius: 50%;
+    float: left;
+    margin-top: 0px;
+    height: 35px;
+    width: 35px;
+    line-height: 1px;
+    padding-top: 17px;
+    margin-right: 8px;
+}
+
+.hide {
+    display: none;
+}
+
+span.form-error {
+    width: 100%;
+    display: block;
+    margin: 5px 0;
+    color: #F44336;
+}
+
+/**
+ * BP Groups List
+ */
+ul.bp-groups-list {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+ul.bp-groups-list li {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+ul.bp-groups-list img {
+    border-radius: 0;
+}
+
+ul.bp-groups-list .group-item {
+    display: table;
+}
+ul.bp-groups-list .group-avatar,
+ul.bp-groups-list .group-details {
+    display: table-cell;
+}
+
+ul.bp-groups-list .group-avatar {
+    width: 20%;
+    padding-right: 10px;
+    vertical-align: middle;
+
+}
+ul.bp-groups-list .group-details {
+    width: 80%;
+    vertical-align: middle;
 }

@@ -56,7 +56,25 @@ class GearsModulesFacebookLogin{
 
 		$login_url = admin_url('admin-ajax.php?action=gears_fb_connect');
 
-		?>
+		if ( empty( $this->appID ) ) { ?>
+		
+			<div class="gears-alert gears-alert-danger mg-bottom-15">
+				<?php esc_html_e( 'Facebook App ID is required for Facebook Connect to work.'); ?>
+			</div>
+		
+			<?php return; ?>
+		
+		<?php } 
+		if ( empty( $this->appSecret ) ) { ?>
+		
+			<div class="gears-alert gears-alert-danger mg-bottom-15">
+				<?php esc_html_e( 'Facebook App Secret is required for Facebook Connect to work.'); ?>
+			</div>
+		
+			<?php return; ?>
+		
+		<?php } ?>
+
 		<a title="<?php echo esc_attr($this->button_label); ?>" class="social-connect fb btn btn-primary" href="<?php echo esc_url($login_url); ?>">
 			<i class="fa fa-facebook"></i>
 			<?php echo esc_attr($this->button_label); ?>
