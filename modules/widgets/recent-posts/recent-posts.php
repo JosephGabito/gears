@@ -101,17 +101,10 @@ class Gears_Blog_Post_Widget extends WP_Widget {
 						</div>
 
 					</div>
-
 					<div class="clearfix"></div>
-
 				</div>
-
 				<div class="clearfix"></div>
-
   			</li>
-
-				<div class="clearfix"></div>
-
 			<?php endwhile; ?>
 		</ul>
 
