@@ -1,14 +1,14 @@
 <?php
-header('Content-Type: application/json');
-
 add_action( 'wp_ajax_gears_login_form_submit', 'gears_login_form_submit' );
 
 add_action( 'wp_ajax_nopriv_gears_login_form_submit', 'gears_login_form_submit' );
 
 function gears_login_form_submit() {
 
+	header('Content-Type: application/json');
+
 	$message = array(
-			'message' => __( 'error', 'flocks' )
+			'message' => __( 'error', 'gears' )
 		);
 
 	$signon = wp_signon();
@@ -17,4 +17,3 @@ function gears_login_form_submit() {
 
 	return;
 }
-?>
