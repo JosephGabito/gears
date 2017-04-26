@@ -19,7 +19,7 @@ DEFINE('GEARS_APP_NAMESPACE', 'Gears');
 /**
  * The current version of the plugin
  */
-DEFINE('GEARS_APP_VERSION', '4.1.2');
+DEFINE('GEARS_APP_VERSION', '4.1.3');
 
 /**
  * The plug-in absolute path
