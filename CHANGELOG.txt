@@ -1,26 +1,20 @@
-06/03/2015
-- Added localisation
-- Updated Strings
+New Gears Update (4.1.5)
 
-04/21/2015
+- Added conditional statement to check is the ff. constants are defined or not:
+   		BCP_MAX_WIDTH
+		BCP_MAX_HEIGHT
+		BCP_THUMB_MAX_WIDTH
+		BCP_THUMB_MAX_HEIGHT
 
-- Added styling to Gears BuddyPress Shortcodes
-- Showed Gears Visual Composer Shortcodes attributes
-- Revamp Gears Visual Composer Shortcodes Icons
-- Added fallback for BuddyPress' Components disabled
-- Changed fallback messages 
+- Remove stray bp profile skin feature codes to prevent bugs from happening
+    - index.php (done)
+    - bcp-filters.php(done)
+    - templates/customise.php(done)
 
-04/20/2015
-- Added functionality for klein coverphoto 3.3
-- Adjusted default cover photo size
-- Added auto update file for easier update
-- Code optimisation
+- Solve Notice: WP_Date_Query was called incorrectly
+    - (Done) - Caused: Global input[name=“w”] is reserved
 
-04/11/2015
-- 3.2
-- Added version level
+- Wrong message when uploading small cover photo.
+    - Done - Alter $bp->message when uploading cover photo
 
-03/14/2015
 
-- 3.1
-- Fixed: "can't use function return value in write context"

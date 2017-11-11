@@ -34,7 +34,6 @@
 <p>
     <?php _e('Click below to select a JPG, GIF or PNG format photo from your computer and then click \'Upload Image\' to proceed.', 'gears'); ?>
 </p>
-           
 <form action="" method="post" id="avatar-upload-form" class="standard-form" enctype="multipart/form-data">
 
     <?php if ( 'upload-image' == bp_get_avatar_admin_step() ) { ?>

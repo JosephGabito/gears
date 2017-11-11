@@ -34,7 +34,6 @@
  * @return bool True on success, false on failure.
  */
 function bcp_core_avatar_handle_crop( $args = '' ) {
-
 	$existing_avatar = '';
 
 	$coverphoto_full_width = BCP_MAX_WIDTH;
