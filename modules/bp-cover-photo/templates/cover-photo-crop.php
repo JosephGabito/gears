@@ -20,12 +20,14 @@
     <input type="hidden" id="y" name="y" />
     <input type="hidden" id="x2" name="x2" />
     <input type="hidden" id="y2" name="y2" />
-    <input type="hidden" id="w" name="w" />
-    <input type="hidden" id="h" name="h" />
+    <input type="hidden" id="w" name="width" />
+    <input type="hidden" id="h" name="height" />
+
     <?php wp_nonce_field( 'bp_avatar_cropstore' ); ?>
 
 <!--end avatar crop preview-->
 <?php if (current_user_can('manage_options')) { ?>
+
 <div id="admin-only-bcp-cover-photo-settings" class="alert alert-info">
     <label for="global-coverphoto">
         <?php
@@ -41,14 +43,15 @@
         </span>
     </label>
 </div>
+
 <?php } ?>
+
 <div class="break-row-top">
     <input type="submit" id="crop" name="avatar-crop-submit" value="<?php _e( 'Crop Image', 'gears' ); ?>" />
 </div>
 
 <script>
 jQuery(function($) {
-
 
     var $avatarToCrop = $('#avatar-to-crop');
 
