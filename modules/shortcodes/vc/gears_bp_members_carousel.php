@@ -6,6 +6,12 @@
  * @since 1.0
  */
 
+$bp_avatar_full_width = 325;
+
+if ( defined( 'BP_AVATAR_FULL_WIDTH' ) ) {
+    $bp_avatar_full_width = BP_AVATAR_FULL_WIDTH;
+}
+
 vc_map(
 	array(
 		"name" => __("BP Members Carousel"),
@@ -88,7 +94,7 @@ vc_map(
 					"heading" => __("Item Width", "gears"),
 					"param_name" => "item_width",
 					"value" => 228,
-					"description" => sprintf(__("The width of each item in the slide. Recommended maximum width is '%s'", "gears"), BP_AVATAR_FULL_WIDTH)
+					"description" => sprintf(__("The width of each item in the slide. Recommended maximum width is '%s'", "gears"), $bp_avatar_full_width)
 				)
 			)
 	)

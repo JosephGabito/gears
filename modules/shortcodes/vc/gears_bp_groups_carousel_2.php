@@ -7,6 +7,11 @@
  */
 
 // [gears_bp_groups_carousel type=’active’ max_item =’10’ max_slides=’7’ min_slides=’1’ item_width=’100’]
+$bp_avatar_full_width = 325;
+
+if ( defined( 'BP_AVATAR_FULL_WIDTH' ) ) {
+    $bp_avatar_full_width = BP_AVATAR_FULL_WIDTH;
+}
 
 vc_map(
 	array(
@@ -85,7 +90,7 @@ vc_map(
 					"heading" => __("Item Width", "gears"),
 					"param_name" => "item_width",
 					"value" => '223',
-					"description" => sprintf(__("The width of each item (ex. '223'). Recommended maximum width '%s'", "gears"),BP_AVATAR_FULL_WIDTH)
+					"description" => sprintf(__("The width of each item (ex. '223'). Recommended maximum width '%s'", "gears"),$bp_avatar_full_width)
 				)
 			)
 	)

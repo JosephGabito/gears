@@ -36,49 +36,57 @@ if ( ! DEFINED('BCP_ENABLE_CUSTOMISE') ) {
     DEFINE('BCP_ENABLE_CUSTOMISE', false);
 }
 
-$bp = buddypress();
+$bp = '';
 
-if ( current_user_can('manage_options') || bp_displayed_user_id() == bp_loggedin_user_id()){
-    // create cover photo tab in user's profile
-    bp_core_new_subnav_item(
-        array(
-           'name' => __('Cover Photo', 'gears'),
-           'slug' => 'cover-photo',
-           'parent_url' => trailingslashit( $bp->displayed_user->domain . $bp->profile->slug . '/' ),
-           'parent_slug' => $bp->profile->slug,
-           'screen_function' => 'bcp_cover_photo_screen',
-           'position' => 40
-       )
-    );
+if ( function_exists( 'buddypress' ) ) {
+    $bp = buddypress();
+}
+
+if ( function_exists( 'bp_displayed_user_id' ) ) {
+    if ( current_user_can('manage_options') || bp_displayed_user_id() == bp_loggedin_user_id()){
+        // create cover photo tab in user's profile
+        bp_core_new_subnav_item(
+            array(
+               'name' => __('Cover Photo', 'gears'),
+               'slug' => 'cover-photo',
+               'parent_url' => trailingslashit( $bp->displayed_user->domain . $bp->profile->slug . '/' ),
+               'parent_slug' => $bp->profile->slug,
+               'screen_function' => 'bcp_cover_photo_screen',
+               'position' => 40
+           )
+        );
+    }
 }
 
 /**
  * Single Group
  */
-if ( bp_is_group_single() ) {
+if ( function_exists( 'bp_is_group_single' ) ) {
+    if ( bp_is_group_single() ) {
 
-    $current_group_id = (int)$bp->groups->current_group->id;
-    $group_creator_id = (int)$bp->groups->current_group->creator_id;
+        $current_group_id = (int)$bp->groups->current_group->id;
+        $group_creator_id = (int)$bp->groups->current_group->creator_id;
 
-    $current_user = get_current_user_id();
+        $current_user = get_current_user_id();
 
-    if ( current_user_can('manage_options') || $group_creator_id == $current_user || groups_is_user_admin( $current_user, $current_group_id ) )
-    {
-        $groups_slug = trailingslashit( bcp_get_groups_slug() );
-        /**
-         * Create cover photo tab inside groups.
-         */
-        $groups_url = trailingslashit ( $groups_slug .  $bp->groups->current_group->slug );
-        bp_core_new_subnav_item(
-            array(
-               'name' => __('Cover Photo', 'gears'),
-               'slug' => 'cover-photo',
-               'parent_url' => $groups_url,
-               'parent_slug' =>  $bp->groups->current_group->slug,
-               'screen_function' => 'bcp_cover_photo_screen',
-               'position' => 1000
-           )
-        );
+        if ( current_user_can('manage_options') || $group_creator_id == $current_user || groups_is_user_admin( $current_user, $current_group_id ) )
+        {
+            $groups_slug = trailingslashit( bcp_get_groups_slug() );
+            /**
+             * Create cover photo tab inside groups.
+             */
+            $groups_url = trailingslashit ( $groups_slug .  $bp->groups->current_group->slug );
+            bp_core_new_subnav_item(
+                array(
+                   'name' => __('Cover Photo', 'gears'),
+                   'slug' => 'cover-photo',
+                   'parent_url' => $groups_url,
+                   'parent_slug' =>  $bp->groups->current_group->slug,
+                   'screen_function' => 'bcp_cover_photo_screen',
+                   'position' => 1000
+               )
+            );
+        }
     }
 }
 
