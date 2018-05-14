@@ -1,7 +1,7 @@
 <?php
 /**
  * Crop an uploaded avatar.
- * 
+ *
  * originally from bp file <>. It was copied since naming it does not have any filters
  * for renaming and changing the cropped avatae
  *
@@ -41,6 +41,7 @@ function bcp_core_avatar_handle_crop( $args = '' ) {
 
 	$coverphoto_thumb_full_width = BCP_THUMB_MAX_WIDTH;
 	$coverphoto_thumb_full_height = BCP_THUMB_MAX_HEIGHT;
+    $bp_core_avatar_upload_path = '';
 
 	$r = wp_parse_args( $args, array(
 		'object'        => 'user',
@@ -65,7 +66,11 @@ function bcp_core_avatar_handle_crop( $args = '' ) {
 	if ( empty( $original_file ) )
 		return false;
 
-	$original_file = bp_core_avatar_upload_path() . $original_file;
+    if ( function_exists( 'bp_core_avatar_upload_path' ) ) {
+        $bp_core_avatar_upload_path = bp_core_avatar_upload_path();
+    }
+
+	$original_file = $bp_core_avatar_upload_path . $original_file;
 
 	if ( !file_exists( $original_file ) )
 		return false;
@@ -73,8 +78,8 @@ function bcp_core_avatar_handle_crop( $args = '' ) {
 	if ( empty( $item_id ) ) {
 		$avatar_folder_dir = apply_filters( 'bp_core_avatar_folder_dir', dirname( $original_file ), $item_id, $object, $avatar_dir );
 	} else {
-			
-		$avatar_folder_dir = apply_filters( 'bp_core_avatar_folder_dir', bp_core_avatar_upload_path() . '/' . $avatar_dir . '/' . $item_id, $item_id, $object, $avatar_dir );
+
+		$avatar_folder_dir = apply_filters( 'bp_core_avatar_folder_dir', $bp_core_avatar_upload_path . '/' . $avatar_dir . '/' . $item_id, $item_id, $object, $avatar_dir );
 
 	}
 
@@ -104,7 +109,7 @@ function bcp_core_avatar_handle_crop( $args = '' ) {
 		$upload_dir           = wp_upload_dir();
 		$existing_avatar_path = str_replace( $upload_dir['baseurl'], '', $existing_avatar );
 		$new_avatar_path      = str_replace( $upload_dir['basedir'], '', $original_file );
-		
+
 		if ( $existing_avatar_path !== $new_avatar_path ) {
 
 			if ($handle = opendir($avatar_folder_dir)) {
@@ -121,7 +126,7 @@ function bcp_core_avatar_handle_crop( $args = '' ) {
 			           		// cover photo exists
 			           		$file = $avatar_folder_dir . '/' . $file_name . '.' . $file_ext;
 			           		@unlink($file);
-			           } 
+			           }
 			        }
 			    }
 			    // close the directory
@@ -150,27 +155,27 @@ function bcp_core_avatar_handle_crop( $args = '' ) {
 	$thumb_filename = 'coverphoto-thumb.' . $ext;
 
 	// Crop the image
-	$full_cropped  = wp_crop_image( 
-		$original_file, 
-		(int) $crop_x, 
-		(int) $crop_y, 
-		(int) $crop_w, 
-		(int) $crop_h, 
-		BCP_MAX_WIDTH, 
-		BCP_MAX_HEIGHT,  
-		false, 
-		$avatar_folder_dir . '/' . $full_filename  
+	$full_cropped  = wp_crop_image(
+		$original_file,
+		(int) $crop_x,
+		(int) $crop_y,
+		(int) $crop_w,
+		(int) $crop_h,
+		BCP_MAX_WIDTH,
+		BCP_MAX_HEIGHT,
+		false,
+		$avatar_folder_dir . '/' . $full_filename
 	);
-	
-	$thumb_cropped = wp_crop_image( $original_file, 
-		(int) $crop_x, 
-		(int) $crop_y, 
-		(int) $crop_w, 
-		(int) $crop_h, 
-		BCP_THUMB_MAX_WIDTH, 
-		BCP_THUMB_MAX_HEIGHT, 
-		false, 
-		$avatar_folder_dir . '/' . 
+
+	$thumb_cropped = wp_crop_image( $original_file,
+		(int) $crop_x,
+		(int) $crop_y,
+		(int) $crop_w,
+		(int) $crop_h,
+		BCP_THUMB_MAX_WIDTH,
+		BCP_THUMB_MAX_HEIGHT,
+		false,
+		$avatar_folder_dir . '/' .
 		$thumb_filename );
 
 	// Check for errors
@@ -189,33 +194,38 @@ function bcp_core_avatar_handle_crop( $args = '' ) {
  * @return string url
  */
 function bcp_fetch_cover_photo($args){
-	
+
 	$cover_photos_collection = array();
+    $bp_core_avatar_upload_path = '';
 
 	$r = wp_parse_args( $args, array(
 			'object_id' => 0,
 			'type' => 'user'
 		));
-	
+
 
 	extract($r, EXTR_SKIP);
 
 	if (0 == $object_id){
 		return $cover_photos_collection;
 	}
-	
+
+    if ( function_exists( 'bp_core_avatar_upload_path' ) ) {
+        $bp_core_avatar_upload_path = bp_core_avatar_upload_path();
+    }
+
 	$upload_dir = wp_upload_dir();
 	$avatars_dir = $type == 'user' ? 'avatars' : 'group-avatars';
-		
+
 	// begin fetching avatar
-		$avatar_upload_dir = bp_core_avatar_upload_path() . '/'.$avatars_dir.'/' . $object_id . '/';
+		$avatar_upload_dir = $bp_core_avatar_upload_path . '/'.$avatars_dir.'/' . $object_id . '/';
 		$avatar_upload_url = $upload_dir['baseurl'] . '/'.$avatars_dir.'/' . $object_id . '/';
 
 		// open the dir
 		if (!file_exists($avatar_upload_dir)){
 			return $cover_photos_collection;
 		}
-		
+
 		if ($handle = opendir($avatar_upload_dir)) {
 			while (false !== ($entry = readdir($handle))) {
 		        if ($entry != "." && $entry != "..") {
@@ -230,7 +240,7 @@ function bcp_fetch_cover_photo($args){
 		           		// cover photo exists
 		           		$cover_photo_url =  $avatar_upload_url . $file_name . '.' . $file_ext;
 		           		$cover_timestamp = '?bcp_cover=' . get_user_meta($object_id, 'cover-photo-timestamp', true);
-		           		
+
 		           		if ('user' !== $type) {
 		           			$cover_timestamp = '?bcp_group_cover=' . groups_get_groupmeta($object_id, 'cover-photo-timestamp');
 		           		}
@@ -240,7 +250,7 @@ function bcp_fetch_cover_photo($args){
 		           		} else {
 		           			$cover_photos_collection['thumb'] = $cover_photo_url . $cover_timestamp;
 		           		}
-		           } 
+		           }
 		        }
 		    }
 
@@ -254,13 +264,13 @@ function bcp_fetch_cover_photo($args){
 
 /**
  * get user/group cover photo
- * 
+ *
  * @uses bcp_fetch_cover_photo
- * @return array 
+ * @return array
  * @param $args array
  */
 function bcp_get_cover_photo($args = array()){
-	
+
 	// fetch cover photo
 	$cover_photo = bcp_fetch_cover_photo($args);
 	$cover_photo_src = "";
@@ -283,14 +293,14 @@ function bcp_get_cover_photo($args = array()){
 		$size = 'full';
 	}
 
-	if (!empty($cover_photo)){ 
+	if (!empty($cover_photo)){
 
 		if(isset($cover_photo)) {
 			$cover_photo_src = $cover_photo[$size];
 		}
 
 	} else {
-		
+
 		// use the default cover photo settings if there are no cover photo
 		$theme_default = plugin_dir_url(__FILE__) . 'img/default.jpg';
 		$cover_photo_option = '__bcp_default_'.$type.'_cover_photo';
