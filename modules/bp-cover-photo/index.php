@@ -18,12 +18,15 @@ require_once 'screen-functions.php';
  * Define global configurations
  */
 if ( ! DEFINED('BCP_MAX_WIDTH') ) {
-    DEFINE('BCP_MAX_WIDTH',  1140);
+    DEFINE('BCP_MAX_WIDTH',  apply_filters('gears_bcp_max_width',1140) );
 }
 if ( ! DEFINED('BCP_MAX_HEIGHT') ) {
-    DEFINE('BCP_MAX_HEIGHT', 452);
+    DEFINE('BCP_MAX_HEIGHT', apply_filters('gears_bcp_max_height',452) );
 }
 
+if ( ! DEFINED('BCP_ASPECT_RATIO') ) {
+    DEFINE('BCP_ASPECT_RATIO', apply_filters('gears_bcp_aspect_ratio', 2.53/1 ));
+}
 if ( ! DEFINED('BCP_THUMB_MAX_WIDTH') ) {
     DEFINE('BCP_THUMB_MAX_WIDTH',  570);
 }
