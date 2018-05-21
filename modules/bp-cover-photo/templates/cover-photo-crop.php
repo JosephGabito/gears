@@ -8,7 +8,7 @@
 ?>
 <!--avatar to crop image -->
 <div  id="avatar-to-crop-wrap">
-    <img src="<?php bp_avatar_to_crop(); ?>" id="avatar-to-crop" 
+    <img src="<?php bp_avatar_to_crop(); ?>" id="avatar-to-crop"
         class="avatar" alt="<?php _e( 'Avatar to crop', 'gears' ); ?>" />
 </div>
 <!--end avatar to crop image-->
@@ -64,7 +64,7 @@ jQuery(function($) {
 
                 $avatarToCrop.Jcrop({
                     setSelect:   [ 0, 0, img_width, img_height ],
-                    aspectRatio: 2.53/1,
+                    aspectRatio: <?php echo BCP_ASPECT_RATIO;?>,
                     trueSize: [imgNaturalWidth, imgNaturalHeight],
                     boxWidth: img_width,
                     boxHeight: img_height,
@@ -74,12 +74,12 @@ jQuery(function($) {
                 });
 
             return;
-        }); 
- 
-                    
-    function bp_cover_photo_preview(coords) 
+        });
+
+
+    function bp_cover_photo_preview(coords)
     {
-        	
+
          $('#x').val(coords.x);
          $('#y').val(coords.y);
          $('#x2').val(coords.x2);
