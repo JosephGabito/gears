@@ -28,11 +28,11 @@ if ( ! DEFINED('BCP_ASPECT_RATIO') ) {
     DEFINE('BCP_ASPECT_RATIO', apply_filters('gears_bcp_aspect_ratio', 2.53/1 ));
 }
 if ( ! DEFINED('BCP_THUMB_MAX_WIDTH') ) {
-    DEFINE('BCP_THUMB_MAX_WIDTH',  570);
+    DEFINE('BCP_THUMB_MAX_WIDTH', apply_filters('gears_bcp_thumb_max_width', 570 ) );
 }
 
 if ( ! DEFINED('BCP_THUMB_MAX_HEIGHT') ) {
-    DEFINE('BCP_THUMB_MAX_HEIGHT', 226);
+    DEFINE('BCP_THUMB_MAX_HEIGHT', apply_filters('gears_bcp_thumb_max_height', 226 ) );
 }
 
 if ( ! DEFINED('BCP_ENABLE_CUSTOMISE') ) {
