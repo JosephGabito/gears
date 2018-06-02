@@ -28,12 +28,16 @@ if ( isset( $_GET['callback'] ) ) {
 	$fb = new Facebook\Facebook([
   		'app_id' => $this->appID,
   		'app_secret' => $this->appSecret,
-  		'default_graph_version' => 'v2.2',
+  		'default_graph_version' => 'v2.10',
  	]);
 
 	$helper = $fb->getRedirectLoginHelper();
 	$permissions = ['email', 'public_profile']; // optional
+
 	$loginUrl = $helper->getLoginUrl( admin_url( 'admin-ajax.php?action=gears_fb_connect&callback=true' ), $permissions );
 
 	header( "location: ". $loginUrl );
+
 }
+
+
