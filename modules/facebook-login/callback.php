@@ -8,7 +8,7 @@
 $fb = new Facebook\Facebook([
   		'app_id' => $this->appID,
   		'app_secret' => $this->appSecret,
-  		'default_graph_version' => 'v2.2',
+  		'default_graph_version' => 'v2.10',
  	]);
 
 $helper = $fb->getRedirectLoginHelper();
@@ -16,9 +16,9 @@ $helper = $fb->getRedirectLoginHelper();
 try {
 	
 	$accessToken = $helper->getAccessToken();
-
+	
 } catch( Facebook\Exceptions\FacebookResponseException $e ) {
-
+	
 	// When Graph returns an error
 	wp_safe_redirect( wp_login_url().'?error=true&type=fb_error' );
 
