@@ -1,4 +1,6 @@
-New Gears Update (4.1.5)
+4.2.2
+- Fixed cover photos by disabling the default bp cover photo by updating the hook which was deprecated on v6.0.0
+- Fixed cover photo upload by updating the hook which was deprecated on v6.0.0
 
 - Added conditional statement to check is the ff. constants are defined or not:
    		BCP_MAX_WIDTH
