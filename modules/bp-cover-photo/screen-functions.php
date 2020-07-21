@@ -58,6 +58,11 @@ function bcp_cover_photo_screen(){
     // filter function for uploading images
     $upload_filter = 'xprofile_avatar_upload_dir';
 
+    // BuddyPress 6.0 and above.
+    if ( ! function_exists('xprofile_avatar_upload_dir')) {
+    	$upload_filter = 'bp_members_avatar_upload_dir';
+    }
+
     // the id of the user
     $item_id = bp_displayed_user_id();
 
