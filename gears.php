@@ -3,7 +3,7 @@
  * Plugin Name: Gears
  * Plugin URI: http://themeforest.net/user/dunhakdis
  * Description: Gears empowers BuddyPress to have more features like cover photos, social login, shortcodes, and more!
- * Version: 4.2.1
+ * Version: 4.2.2
  * Author: Dunhakdis
  * Author URI: http://themeforest.net/user/dunhakdis
  * License: GPL2
@@ -12,49 +12,48 @@
 // ============== // ============== // ============== // ============== // ============== // ============== //
 
 /**
- * The namespace
+ * Define the namespace of our plugin.
  */
-DEFINE('GEARS_APP_NAMESPACE', 'Gears');
+define( 'GEARS_APP_NAMESPACE', 'Gears' );
 
 /**
- * The current version of the plugin
+ * Define the current version of Gears.
  */
-DEFINE('GEARS_APP_VERSION', '4.2.1');
+define( 'GEARS_APP_VERSION', '4.2.2' );
 
 /**
- * The plug-in absolute path
+ * The plugin's absolute path.
  */
-DEFINE('GEARS_APP_PATH', plugin_dir_path( __FILE__ ));
+define( 'GEARS_APP_PATH', plugin_dir_path( __FILE__ ) );
 
 /**
- * Set to FALSE to disable update debugging
+ * Set GEARS_IS_UPDATE_DEBUG_MODE to false to force update from the custom source url.
  */
-DEFINE('GEARS_IS_UPDATE_DEBUG_MODE', TRUE);
+define( 'GEARS_IS_UPDATE_DEBUG_MODE', true );
 
 /**
- * Load the translation file
+ * Load the translation file.
  */
 require_once GEARS_APP_PATH . 'locale.php';
 
 /**
- * Require updater file to check the version periodically
- * for changes and updates
+ * Require updater file to check the version periodically.
+ * This is for required changes and updates.
  */
 require_once GEARS_APP_PATH . 'update-check.php';
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+
+$update_checker = Puc_v4_Factory::buildUpdateChecker(
 	'http://repo.dunhakdis.com/gears/gears.json',
 	__FILE__, //Full path to the main plugin file or functions.php.
 	'gears'
 );
 
 /**
- * Require main library file
+ * Require the main file.
  */
 require_once GEARS_APP_PATH . 'gears-engine.php';
 
 /**
- * Start the app
+ * Start the Gears class.
  */
-$Gears = new Gears();
-
-?>
+$gears = new Gears();
