@@ -1,0 +1,8 @@
+{
+    "name" : "Gears",
+    "version" : "4.2.3",
+    "download_url" : "https://repo.dunhakdis.com/gears/gears.zip",
+    "sections" : {
+        "description" : "Gears empowers BuddyPress to have more features like cover photos, social login, shortcodes, and more."
+    }
+}
