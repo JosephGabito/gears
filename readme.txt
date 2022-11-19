@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: dunhakdis
-Tags: comments, spam
+Tags: buddypress
 Requires at least: 4.6
 Tested up to: 5.2
 Stable tag: 4.2.2
